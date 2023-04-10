@@ -1,6 +1,6 @@
 # Welcome to iyioon notes
 
-This is my digital garden where I share everything I learn during my time in NUS.
+This is my digital garden where I store everything I learn during my time in NUS.
 
 My computer science journey:
 
