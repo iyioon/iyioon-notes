@@ -1,17 +1,26 @@
 window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
+  tex2jax: {
+    inlineMath: [
+      ["$", "$"],
+      ["\\(", "\\)"],
+    ],
+    displayMath: [
+      ["$$", "$$"],
+      ["\\[", "\\]"],
+    ],
+  },
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
     },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-  
-  document$.subscribe(() => {
-    MathJax.typesetPromise()
-  })
-  
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'",
+    },
+  },
+  displayAlign: "center",
+  showProcessingMessages: false,
+  messageStyle: "none",
+};
