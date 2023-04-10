@@ -4,8 +4,8 @@ This is my digital garden where I archive everything I learn during my time in N
 
 My computer science journey:
 
-- Year 1 Semester 1 (unavailable)
-- [[Year 1 Semester 2]]
+- [Year 1 Semester 1](Year%201%20Semester%201/Year%201%20Semester%201.md)
+- [Year 1 Semester 2](Year%201%20Semester%202/Year%201%20Semester%202.md)
 
 ## Before you adventure
 
