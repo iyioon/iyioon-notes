@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cs2030s.fp","l":"InfiniteList.End"},{"p":"cs2030s.fp","l":"InfiniteList"}];updateSearchResults();

@@ -45,8 +45,8 @@ markdown_extensions:
   - extra
   - tables
   - fenced_code
-  - toc:
-      separator: "_"
+  #- toc:
+  #   separator: "_"
 
   - toc:
       permalink: true

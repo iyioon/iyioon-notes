@@ -99,6 +99,6 @@ Visit [[Lect18_MSI_Components_full.pdf#page=48]]
 
 Visit [[Lect18_MSI_Components_full.pdf#page=51]]
 
-[[Lect18_MSI_Components_full.pdf#page=54|Here]], the grouping is done by A and B. eg A = 0, B = 0 is grouped together. A = 0, B = 1 is grouped together. See [[NUS/Year 1 Semester 2/CS2100/Tutorial/Tut8/tut08qns.pdf\|tut08 Q1]] for example. 
+[[Lect18_MSI_Components_full.pdf#page=54|Here]], the grouping is done by A and B. eg A = 0, B = 0 is grouped together. A = 0, B = 1 is grouped together. See [[CS2100_tut08qns.pdf\|tut08 Q1]] for example. 
 
 Choose the Most significant bit for selectors because they are easily grouped together.
