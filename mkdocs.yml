@@ -10,7 +10,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: #0B2447
+      primary: black
       accent: #19376D
       toggle:
         icon: material/toggle-switch-off-outline
