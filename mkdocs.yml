@@ -2,9 +2,10 @@ site_name: obsidian-mkdocs template
 
 theme:
     name: 'material'
+    
     features:
-        - content.action.edit
-        - content.action.view
+        - navigation.footer
+        
     palette:
 
     # Light mode
