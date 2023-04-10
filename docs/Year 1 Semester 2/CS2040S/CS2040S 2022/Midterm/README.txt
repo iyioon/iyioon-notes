@@ -1,0 +1,1 @@
+You can try all the questions except questions related to Bloom Filters as that is outside the scope of CS2040.
