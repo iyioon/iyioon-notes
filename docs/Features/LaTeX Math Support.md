@@ -1,6 +1,6 @@
 # LaTeX Math Support
 
-LaTeX math is supported using MathJax.
+LaTeX math is supported using MathJax. test
 
 Inline math looks like $f(x) = x^2$. The input for this is `$f(x) = x^2$`. Use `$...$`.
 
