@@ -19,7 +19,7 @@ With this template, you get these **out-of-the-box**:
 
 ![](2021-11-22-22-54-02.png)
 
-2.  **Give a name** to your repository. By default your notes will be published at `<https://username.github.io/repo-name/>`
+2.  **Give a name** to your repository. By default your notes will be published at `<https://iyioon.github.io/iyioon-notes/>`
      - Copy only the `main` branch while creating the repo from the template
 3. **Clone** the repository you generated **into your Obsidian folder/vault.**
 4. **Move your notes** that you would like to make public to the `repo-name/docs` folder.
