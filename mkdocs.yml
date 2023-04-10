@@ -5,6 +5,8 @@ theme:
 
   features:
     - navigation.footer
+    - content.code.copy
+    - content.code.select
 
   palette:
     # Light mode
@@ -45,11 +47,15 @@ markdown_extensions:
   - extra
   - tables
   - fenced_code
-  #- toc:
-  #   separator: "_"
-
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 plugins:
   - search
