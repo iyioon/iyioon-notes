@@ -12,8 +12,8 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: #070A52
-      accent: #EA5455
+      primary: black
+      accent: #ea5455
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
@@ -22,7 +22,7 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: #EA5455
+      accent: #ea5455
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
