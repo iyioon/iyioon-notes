@@ -1,34 +1,34 @@
 # Dynamic Programming
 
-<span class="right-menu">[Video](https://youtu.be/xSHOtb_RAJE) [[CS2040_22.DynamicProgrammingIntro.pdf\|PDF]]</span>
+<span class="right-menu">[Video](https://youtu.be/xSHOtb_RAJE) [PDF](CS2040_22.DynamicProgrammingIntro.pdf%5C)</span>
 
 ## Basics
 
-> [[CS2040_22.DynamicProgrammingIntro.pdf\|PDF]] Optimal solution can be constructed from optimal solutions to smaller sub-problems
+> [PDF](CS2040_22.DynamicProgrammingIntro.pdf%5C) Optimal solution can be constructed from optimal solutions to smaller sub-problems
 
 **Overlapping sub-problems:** The same smaller problem is used to solve multiple different bigger problems.
 
-![[22 Dynamic Programming Basics.png|500]]
+![500](../Attachments/22%20Dynamic%20Programming%20Basics.png)
 
 ### Basic Strategy: Bottom up dynamic programming
 
-![[22 Dynamic Programming Bottom up.png|500]]
+![500](../Attachments/22%20Dynamic%20Programming%20Bottom%20up.png)
 
 ### Basic Strategy: Top down dynamic programming
 
-![[22 Dynamic Programming Top down.png|500]]
+![500](../Attachments/22%20Dynamic%20Programming%20Top%20down.png)
 
 
 These are just brief concepts. We will understand them with various examples in the upcoming sections.
 
-- [[#Longest Increasing Subsequence]]
-- [[#Bounded Prize Collecting]]
-- [[#Vertex Cover on a Tree]]
-- [[#All-Pairs Shortest Paths]]
+- [Longest Increasing Subsequence](#Longest%20Increasing%20Subsequence)
+- [Bounded Prize Collecting](#Bounded%20Prize%20Collecting)
+- [Vertex Cover on a Tree](#Vertex%20Cover%20on%20a%20Tree)
+- [All-Pairs Shortest Paths](#All-Pairs%20Shortest%20Paths)
 
 ## Longest Increasing Subsequence
 
-> [[CS2040_22.DynamicProgrammingIntro.pdf#page=20]]
+> [](CS2040_22.DynamicProgrammingIntro.pdf#page=20)
 
 **Problem:**. You are give an sequence of integers. Your goal is to find the increasing subsequence of maximum length.
 
@@ -36,11 +36,11 @@ These are just brief concepts. We will understand them with various examples in 
 
 ### DAG Solution
 
-> One way to find such maximum length is with [[CS2040_17.Graphs#Directed Acyclic Graphs\|DAG]]. 
+> One way to find such maximum length is with [](CS2040_17.Graphs.md#Directed%20Acyclic%20Graphs%5C%7CDAG). 
 
 For each nodes, draw a directed array to any other nodes with greater value.
 
-![[22 Dynamic Programming LIS DAG.png|400]]
+![400](../Attachments/22%20Dynamic%20Programming%20LIS%20DAG.png)
 
 **STEP 1:** Topological sort
 **STEP 2:**  Calculate longest path - DAG_SSSP. LIS = max(LP)+1
@@ -52,15 +52,15 @@ This is inefficient. We don't have to run it n times because to find the maximum
 
 Start with the smallest sub-problem:
 
-![[22 Dynamic Programming.png|500]]
+![500](../Attachments/22%20Dynamic%20Programming.png)
 
 Move to the next node and examine all outgoing edges and find the maximum. Its largest path will be 1 +  the maximum of the outgoing edge:
 
-![[22 Dynamic Programming-1.png|450]]
+![450](../Attachments/22%20Dynamic%20Programming-1.png)
 
 Continue for all nodes:
 
-![[22 Dynamic Programming-2.png|500]]
+![500](../Attachments/22%20Dynamic%20Programming-2.png)
 
 Performance: $O(n^2)$
 
@@ -75,7 +75,7 @@ In summary the dynamic programming recipe consist of the following steps:
 - **Step 3:** Solve problem using sub-problems
 	- E.g., $S[i]=\left(\max _{(i, j) \in E} S[j]\right)+1$
 - **Step 4:** Write (pseudo)code
-	- E.g. [[CS2040_22.DynamicProgrammingIntro.pdf#page=46|Code]]
+	- E.g. [](CS2040_22.DynamicProgrammingIntro.pdf#page=46%7CCode)
 ## Bounded Prize Collecting
 
 

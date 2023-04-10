@@ -2,7 +2,7 @@
 
 ## Pointers 
 
-Note from: [[Lect4a_Pointers_and_Functions 1.pdf]]
+Note from: [Lect4a_Pointers_and_Functions 1](Lect4a_Pointers_and_Functions%201.pdf)
 ### Referring to the address
 
 ```c
@@ -37,7 +37,7 @@ printf("a = %d\n", *a_ptr); // Is equiv to printf("a = %d\n", a);
 
 ### Incrementing a Pointer
 
-![[Lect4b_Pointers_and_Functions 2.pdf#page=5]]
+![](Lect4b_Pointers_and_Functions%202.pdf#page=5)
 
 ## Functions 
 
@@ -66,11 +66,11 @@ To use math functions, you need to
 
 ### User-Defined Functions
 
-![[Lect4c_Pointers_and_Functions 3.pdf#page=9]]
+![](Lect4c_Pointers_and_Functions%203.pdf#page=9)
 
 ## Passing Structure to Function
 
-![[Lect4d_Pointers_and_Functions 4.pdf#page=3]]
+![](Lect4d_Pointers_and_Functions%204.pdf#page=3)
 
 ## Strings
 
@@ -117,4 +117,4 @@ printf("%s\n", str);
 
 ### String Functions
 
-![[Lect5b_Arrays_Strings_and_Structures 2.pdf#page=11]]
+![](Lect5b_Arrays_Strings_and_Structures%202.pdf#page=11)

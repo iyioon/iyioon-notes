@@ -26,7 +26,7 @@ Add 1 to the end eg: 0010.100 into 2s complement is 1101.100
 ## Register in MIPS
 
 
-![[Key Notes Register in Mips.png]]
+![Key Notes Register in Mips](../Attachments/Key%20Notes%20Register%20in%20Mips.png)
 
 ### BEQ & Jump
 
@@ -57,6 +57,6 @@ If a machine have 64 addresses, the size of address have to be log2(62)=6 to rep
 $$X . Y+X^{\prime} Z+Y . Z=X \cdot Y+X^{\prime} Z$$
 ## Circuit implementation calculating minterms
 
-![[minterms.png]]
+![minterms](../Attachments/minterms.png)
 
 Don't try out everything. Here B must be 1 for F to be 1. Start there

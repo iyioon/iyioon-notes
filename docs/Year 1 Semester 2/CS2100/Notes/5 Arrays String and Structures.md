@@ -30,7 +30,7 @@ int main(void) {
 
 ### Arrays and Pointers
 
-![[Lect5a_Arrays_Strings_and_Structures 1.pdf#page=9]]
+![](Lect5a_Arrays_Strings_and_Structures%201.pdf#page=9)
 
 ### Copy array to another
 
@@ -65,11 +65,11 @@ Structures allow grouping of heterogeneous members (of different types)
 
 ### Declaring Structure Types
 
-![[Lect5c_Arrays_Strings_and_Structures 3.pdf#page=5]]
+![](Lect5c_Arrays_Strings_and_Structures%203.pdf#page=5)
 
 ### initializing Structure Variables
 
-![[Lect5c_Arrays_Strings_and_Structures 3.pdf#page=8]]
+![](Lect5c_Arrays_Strings_and_Structures%203.pdf#page=8)
 
 ### Passing Structure to Function
 
@@ -77,7 +77,7 @@ The entire structure is copied, i.e., members of the actual parameter are copied
 
 ### Passing Address of Structure to Function
 
-![[Lect5d_Arrays_Strings_and_Structures 4.pdf#page=9]]
+![](Lect5d_Arrays_Strings_and_Structures%204.pdf#page=9)
 
 ### The Arrow Operator
 

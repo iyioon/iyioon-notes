@@ -17,12 +17,12 @@ $$
 \end{aligned}
 $$
 
-Visit [[MA2001-Chapter6.pdf#page=2]]
-[[MA2001-Chapter6.pdf#page=3|Example]]
+Visit [](MA2001-Chapter6.pdf#page=2)
+[](MA2001-Chapter6.pdf#page=3%7CExample)
 
 ## Definition
 
-See [[MA2001-Chapter6.pdf#page=4|PDF]] First
+See [](MA2001-Chapter6.pdf#page=4%7CPDF) First
 
 Let $\boldsymbol{A}$ be a square matrix of order $n$.
 
@@ -33,7 +33,7 @@ Suppose that for some $\lambda \in \mathbb{R}$ and nonzero $v \in \mathbb{R}^n$
 $\lambda$ is called an **eigenvalue** of $\boldsymbol{A}$.
 $\boldsymbol{v}$ is called an **eigenvector** of $\boldsymbol{A}$ associated with $\lambda$.
 
-[[MA2001-Chapter6.pdf#page=5|Example]]
+[](MA2001-Chapter6.pdf#page=5%7CExample)
 
 ## Characteristic Equation
 
@@ -41,7 +41,7 @@ $\boldsymbol{v}$ is called an **eigenvector** of $\boldsymbol{A}$ associated wit
 
 - Then the eigenvalues of $A$ are precisely all the roots to the characteristic equation $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$
 
-[[MA2001-Chapter6.pdf#page=6|See why & Example]]
+[](MA2001-Chapter6.pdf#page=6%7CSee%20why%20&%20Example)
 
 ## Main theorem for invertible matrices
 
@@ -58,11 +58,11 @@ $\boldsymbol{v}$ is called an **eigenvector** of $\boldsymbol{A}$ associated wit
 9. $\operatorname{rank}(\boldsymbol{A})=n$.
 10. 0 is not an eigenvalue of $\boldsymbol{A}$.
 
-[[MA2001-Chapter6.pdf#page=8|Proof of number 10]]
+[](MA2001-Chapter6.pdf#page=8%7CProof%20of%20number%2010)
 
 ## Upper Triangular Matrices
 
-It is easier to find the eigenvalue for upper triangular matrices. [[MA2001-Chapter6.pdf#page=9|See why]]
+It is easier to find the eigenvalue for upper triangular matrices. [](MA2001-Chapter6.pdf#page=9%7CSee%20why)
 
 **Theorem**. Let $\boldsymbol{A}$ be an upper (or lower) triangular matrix. Then its eigenvalues are all the diagonal entries of $\boldsymbol{A}$.
 
@@ -92,15 +92,15 @@ $$
 - The eigenspace of $\boldsymbol{A}$ associated to $\lambda$ is the nullspace of $\lambda \boldsymbol{I}-\boldsymbol{A}$, denoted by $E_\lambda$ (or $E_{\boldsymbol{A}, \lambda}$ ).
 - $E_\lambda$ consists of all the eigenvectors of $A$ associated to $\lambda$, and the zero vector 0 . Note that $\operatorname{dim} E_\lambda \geq 1$
 
-[[MA2001-Chapter6.pdf#page=10|Example]]
+[](MA2001-Chapter6.pdf#page=10%7CExample)
 
-_SEE IMPORTANT TIP:_ [[MA2001-Chapter6.pdf#page=11|Example]]
+_SEE IMPORTANT TIP:_ [](MA2001-Chapter6.pdf#page=11%7CExample)
 
 - Here, $\left(\begin{array}{ccc}2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2\end{array}\right)$ is singular. Also we see that $R_{1}$ and $R_{2}$ are linearly independent (They are not a constant multiple of each other). Thus we can just ignore $R_{3}$ during the calculation.
 
 **NOTE**:
 If $\boldsymbol{A}$ is singular, then 0 is an eigenvalue of $\boldsymbol{A}$, then the eigenspace $E_0$ is the nullspace of $\boldsymbol{A}$. 
-[[MA2001-Chapter6.pdf#page=11|Example]]
+[](MA2001-Chapter6.pdf#page=11%7CExample)
 
 ## Diagonalizable Matrices
 
@@ -116,7 +116,7 @@ Then $\boldsymbol{A}$ is diagonalizable.
 - Note that the diagonal entries of $\boldsymbol{D}$ are the eigenvalues of $\boldsymbol{A}$.
 - The columns of $\boldsymbol{P}$ are eigenvectors of $\boldsymbol{A}$ associated to these eigenvalues.
 
-[[MA2001-Chapter6.pdf#page=14|Example]]
+[](MA2001-Chapter6.pdf#page=14%7CExample)
 
 ## Criterion of Diagonalizability
 
@@ -132,10 +132,10 @@ $\boldsymbol{A}$ is diagonalizable $\Leftrightarrow A$ has $n$ linearly independ
 	  $\boldsymbol{P}$ is not unique. For instance,
 	- $v_i$ can be replaced by a nonzero multiple of $v_i$.
 
-[[MA2001-Chapter6.pdf#page=16]]
+[](MA2001-Chapter6.pdf#page=16)
 ## Algorithm of Diagonalization
 
-[[MA2001-Chapter6.pdf#page=16]] - [[MA2001-Chapter6.pdf#page=18]]
+[](MA2001-Chapter6.pdf#page=16) - [](MA2001-Chapter6.pdf#page=18)
 
 Let $\boldsymbol{A}$ be a square matrix of order $n$.
 
@@ -153,29 +153,29 @@ Case 2. If $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})$ can be co
 	- $S_1 \cup \cdots \cup S_k=\left\{\boldsymbol{v}_1, \ldots, \boldsymbol{v}_n\right\}$ is a basis for $\mathbb{R}^n$.
 	- $\boldsymbol{P}=\left(\begin{array}{lll}\boldsymbol{v}_1 & \cdots & \boldsymbol{v}_n\end{array}\right)$ diagonalizes $\boldsymbol{A}$.
 
-**Remarks**: [[MA2001-Chapter6.pdf#page=17]]
+**Remarks**: [](MA2001-Chapter6.pdf#page=17)
 
-[[MA2001-Chapter6.pdf#page=19|Example]]. Here we seem that the diagonal entries of $\boldsymbol{P}^{-1} \boldsymbol{B P}$ is the eigenvalue. There is no need to calcuate.
+[](MA2001-Chapter6.pdf#page=19%7CExample). Here we seem that the diagonal entries of $\boldsymbol{P}^{-1} \boldsymbol{B P}$ is the eigenvalue. There is no need to calcuate.
 
 
-[[MA2001-Chapter6.pdf#page=19|Example]] Here we see that $A$ is lower triangular. Hence the eigenvalue are 1,2,2
+[](MA2001-Chapter6.pdf#page=19%7CExample) Here we see that $A$ is lower triangular. Hence the eigenvalue are 1,2,2
 
-[[MA2001-Chapter6.pdf#page=20|Full Working Example A]] We see that to show $A$ is not diagonizable, we start with $\lambda=2$ for faster calculation.
+[](MA2001-Chapter6.pdf#page=20%7CFull%20Working%20Example%20A) We see that to show $A$ is not diagonizable, we start with $\lambda=2$ for faster calculation.
 
 **Theorem**: Let $\boldsymbol{A}$ be a square matrix of order $n$.
 
 - If $\boldsymbol{A}$ has $n$ distinct eigenvalues,
 - then $\boldsymbol{A}$ is diagonalizable.
 
-[[MA2001-Chapter6.pdf#page=23|Proof]]
+[](MA2001-Chapter6.pdf#page=23%7CProof)
 
 ## Application
 
-[[MA2001-Chapter6.pdf#page=24]]
+[](MA2001-Chapter6.pdf#page=24)
 
 ## Orthogonal Diagonalization
 
-[[MA2001-Chapter6.pdf#page=26]]
+[](MA2001-Chapter6.pdf#page=26)
 
 **Definition**. A square matrix $A$ is called orthogonally diagonalizable if it can be diagonalized by an orthogonal matrix. That is,
 
@@ -183,7 +183,7 @@ Case 2. If $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})$ can be co
 - $\boldsymbol{P}^{\mathrm{T}} \boldsymbol{A P}\left(=\boldsymbol{P}^{-1} \boldsymbol{A P}\right)$ is a diagonal matrix.
 
 $\boldsymbol{P}$ is said to orthogonally diagonalize $\boldsymbol{A}$. This makes it easy to find $P^{-1}$ which is $P^T$
-[[MA2001-Chapter6.pdf#page=27]]
+[](MA2001-Chapter6.pdf#page=27)
 
 ### Classification
 
@@ -203,13 +203,13 @@ Let $\boldsymbol{A}$ be a symmetric matrix of order $n$.
 
 If A is symmetric, the eigenvectors are orthogonal. So just normalized to get orthonormal vectors.
 
-[[MA2001-Chapter6.pdf#page=28]]
-[[MA2001-Chapter6.pdf#page=30|Example]]
-[[MA2001-Chapter6.pdf#page=31|Example 2]]
+[](MA2001-Chapter6.pdf#page=28)
+[](MA2001-Chapter6.pdf#page=30%7CExample)
+[](MA2001-Chapter6.pdf#page=31%7CExample%202)
 
 ## Quadratic Forms and Conic Sections
 
-[[MA2001-Chapter6.pdf#page=34]]
+[](MA2001-Chapter6.pdf#page=34)
 
 $Q(x, y)=2 x^2+3 y^2$ is a quadratic form in $x$ and $y$.
 
@@ -221,29 +221,29 @@ $Q(x, y)=x^2+y^2-x y$ is a quadratic form in $x$ and $y$.
 - Let $\boldsymbol{x}=\left(\begin{array}{l}x \\ y\end{array}\right)$ and $\boldsymbol{A}=\left(\begin{array}{cc}1 & -\frac{1}{2} \\ -\frac{1}{2} & 1\end{array}\right)$.
 - Then $Q(x, y)=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$.
 
-[[MA2001-Chapter6.pdf#page=35]]
+[](MA2001-Chapter6.pdf#page=35)
 
 ### Simplification
 
-[[MA2001-Chapter6.pdf#page=36]]
-[[MA2001-Chapter6.pdf#page=37|Example]]
+[](MA2001-Chapter6.pdf#page=36)
+[](MA2001-Chapter6.pdf#page=37%7CExample)
 
 ### Quadratic Equation
 
-[[MA2001-Chapter6.pdf#page=38]]
+[](MA2001-Chapter6.pdf#page=38)
 
 ### Classification of Conics
 
-[[MA2001-Chapter6.pdf#page=30]]
+[](MA2001-Chapter6.pdf#page=30)
 
 ### Standard Forms
 
-[[MA2001-Chapter6.pdf#page=39]]
+[](MA2001-Chapter6.pdf#page=39)
 
 ### Classification
 
-[[MA2001-Chapter6.pdf#page=43]]
+[](MA2001-Chapter6.pdf#page=43)
 
 ### Examples
 
-[[MA2001-Chapter6.pdf#page=44]]
+[](MA2001-Chapter6.pdf#page=44)

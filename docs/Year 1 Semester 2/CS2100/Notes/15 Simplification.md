@@ -4,7 +4,7 @@
 
 **Half adder** is a circuit that adds 2 single bits (X,Y) to produce a result of 2 bits (C,S)
 
-Visit [[Lect15_Simplification_full.pdf#page=8]]
+Visit [](Lect15_Simplification_full.pdf#page=8)
 
 ## Gray Code
 
@@ -41,7 +41,7 @@ $$
 
 Make a mirror image again and change the third bit to the right. Repeat.
 
-Visit [[Lect15_Simplification_full.pdf#page=10]]
+Visit [](Lect15_Simplification_full.pdf#page=10)
 
 ## Karnaugh-map (K-map)
 
@@ -51,28 +51,28 @@ Visit [[Lect15_Simplification_full.pdf#page=10]]
 - Each square represents a minterm
 - Two adjacent squares represent minterms that differ by exactly one literal
 
-Visit [[Lect15_Simplification_full.pdf#page=14]]
+Visit [](Lect15_Simplification_full.pdf#page=14)
 
 
 ## How to use K-maps 
 
-Visit [[Lect15_Simplification_full.pdf#page=27]]
+Visit [](Lect15_Simplification_full.pdf#page=27)
 
 
 ## Pls and EPIs
 
-Visit [[Lect15_Simplification_full.pdf#page=34]]
+Visit [](Lect15_Simplification_full.pdf#page=34)
 
 max size = 4
 
 
 ## Finding simplified SOP Expression
 
-Visit [[Lect15_Simplification_full.pdf#page=39]]
+Visit [](Lect15_Simplification_full.pdf#page=39)
 
 ## Finding simplified POS Expression
 
-Visit [[Lect15_Simplification_full.pdf#page=44]]
+Visit [](Lect15_Simplification_full.pdf#page=44)
 
 Start with F' (complement)
 Apply the K-map technique
@@ -81,4 +81,4 @@ Complement the boolean expression obtained
 ## Don't-Care Conditions
 
 
-Visit [[Lect15_Simplification_full.pdf#page=46]]
+Visit [](Lect15_Simplification_full.pdf#page=46)

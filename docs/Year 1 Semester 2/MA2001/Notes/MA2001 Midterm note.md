@@ -62,7 +62,7 @@ Let $\boldsymbol{A}$ be a square matrix. Then the followings are equivalent:
 
 ## Elementary matrices
 
-![[Chapter 2 Elementary Matrices.png]]
+![Chapter 2 Elementary Matrices](../Attachments/Chapter%202%20Elementary%20Matrices.png)
 
 *Important Note*: $E_6 \cdots E_2 E_1 A=I$
 Every elementary matrix is invertible
@@ -114,10 +114,10 @@ If $\boldsymbol{A} \stackrel{R_i+c R_j}{\longrightarrow} \boldsymbol{B}$, then $
 <div style="page-break-after: always;"></div>
 ## Adjoint Matrix
 
-![[Midterm notes Adjoint matrix example.png]]
+![Midterm notes Adjoint matrix example](../Attachments/Midterm%20notes%20Adjoint%20matrix%20example.png)
 ## Cramer's Rule
 
-![[MA2001 Midterm note cramer's rule example.png]]
+![MA2001 Midterm note cramer's rule example](../Attachments/MA2001%20Midterm%20note%20cramer's%20rule%20example.png)
 
 Note 60 here is the determinant.
 
@@ -189,7 +189,7 @@ Also if $k<n$, then $\operatorname{span}(S) \neq \mathbb{R}^n$.
 
 ### Example 
 
-![[MA2001 Midterm note example Linear span.png]]
+![MA2001 Midterm note example Linear span](../Attachments/MA2001%20Midterm%20note%20example%20Linear%20span.png)
 ## Subspaces 
 
 Recall that a subspace $V$ is of the form $\operatorname{span}(S)$. Then

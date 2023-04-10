@@ -30,5 +30,5 @@ By definition, **epidemiology** is the study (scientific, systematic, and data-d
 
 ## Application of radiation - Medical Imaging
 
-[[GEC1036 15 - Applications of Radiation - Medical Imaging.pdf]]
+[GEC1036 15 - Applications of Radiation - Medical Imaging](GEC1036%2015%20-%20Applications%20of%20Radiation%20-%20Medical%20Imaging.pdf)
 

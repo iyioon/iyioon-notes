@@ -1,4 +1,4 @@
-<span class="right-menu">My Solution to <br>[[CS2040_tut02.pdf|Week 4 Tutorial 2]]</span>
+<span class="right-menu">My Solution to <br>[Week 4 Tutorial 2](CS2040_tut02.pdf)</span>
 
 ## Problem 1. Time Complexity Analysis
 

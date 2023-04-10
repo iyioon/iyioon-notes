@@ -11,10 +11,10 @@ Use parenthesis to overwrite precedence
 
 ## Proof using Truth Table
 
-Use truth table to show the two results are the same. Visit [[Lect13_Boolean_Algebra_full.pdf#page=9\|page 9]]
+Use truth table to show the two results are the same. Visit [](Lect13_Boolean_Algebra_full.pdf#page=9%5C%7Cpage%209)
 ## Laws of Boolean Algebra
 
-![[Boolean Algebra Laws of Boolean Algebra.png]]
+![Boolean Algebra Laws of Boolean Algebra](../Attachments/Boolean%20Algebra%20Laws%20of%20Boolean%20Algebra.png)
 
 ## Duality 
 
@@ -28,23 +28,23 @@ $$a \cdot(b+c)=(a \cdot b)+(a \cdot c)$$
 
 ## Theorems
 
-![[Boolean Algebra Theorems.png]]
+![Boolean Algebra Theorems](../Attachments/Boolean%20Algebra%20Theorems.png)
 
 ## Boolean Functions
 
-Visit [[Lect13_Boolean_Algebra_full.pdf#page=15]]
+Visit [](Lect13_Boolean_Algebra_full.pdf#page=15)
 
 ## Complement Functions
 
-Visit [[Lect13_Boolean_Algebra_full.pdf#page=16]]
+Visit [](Lect13_Boolean_Algebra_full.pdf#page=16)
 
 ## Standard Forms
 
 Certain types of Boolean expressions lead to circuits that are desirable from an implementation viewpoint.
 
 There are two standard forms:
-- [[#Sum-of-Products (SOP) expression]]
-- [[#Product-of-Sums (POS) expression]]
+- [Sum-of-Products (SOP) expression](#Sum-of-Products%20(SOP)%20expression)
+- [Product-of-Sums (POS) expression](#Product-of-Sums%20(POS)%20expression)
 
 Every boolean expression can be expressed in SOP or POS form.
 
@@ -76,17 +76,17 @@ First lets start with the basic terms:
 - Examples $x,x \cdot(x+z'),(x+y) \cdot (x'+y+z)$
 
 
-Quiz [[Lect13_Boolean_Algebra_full.pdf#page=19]]
+Quiz [](Lect13_Boolean_Algebra_full.pdf#page=19)
 
 ## Minterms and Maxterms
 
-Visit [[Lect13_Boolean_Algebra_full.pdf#page=20]]
+Visit [](Lect13_Boolean_Algebra_full.pdf#page=20)
 
-![[Boolean Algebra Minterms and Maxterms.png]]
+![Boolean Algebra Minterms and Maxterms](../Attachments/Boolean%20Algebra%20Minterms%20and%20Maxterms.png)
 
 Each minterm is the complement of its corresponding maxterm.
 
-Example : [[Lect13_Boolean_Algebra_full.pdf#page=22]]
+Example : [](Lect13_Boolean_Algebra_full.pdf#page=22)
 
 ### How to convert Boolean expression to Minterm and Maxterm.
 
@@ -103,11 +103,11 @@ For Maxterm, do the opposit by setting the complement to 1.
 
 ### Sum-of-Minterms
 
-Visit [[Lect13_Boolean_Algebra_full.pdf#page=24]]
+Visit [](Lect13_Boolean_Algebra_full.pdf#page=24)
 
 ### Product-of-Maxterms
 
-Visit [[Lect13_Boolean_Algebra_full.pdf#page=25]]
+Visit [](Lect13_Boolean_Algebra_full.pdf#page=25)
 
 ## Conversion of Standard Forms
 

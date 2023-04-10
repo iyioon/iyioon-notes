@@ -2,7 +2,7 @@
 
 ## Edit, Compile, Execute
 
- ![[EditCompileExecute.png|500]]
+ ![500](../Attachments/EditCompileExecute.png)
 
 ## A Simple C Program
 
@@ -22,15 +22,15 @@ main function header
 }
 ```
 
-![[A Simple C Program.png|600]]
+![600](../Attachments/A%20Simple%20C%20Program.png)
 
 By convention, `return 0` is for successful execution and `-1` for unsuccessful execution.
 
 ## von Neumann Architecture
 
-![[von Neumann Architecture.png|]]
+![von Neumann Architecture](../Attachments/von%20Neumann%20Architecture.png)
 
-![[Computer Components.png|300]]
+![300](../Attachments/Computer%20Components.png)
 
 - Central Processing Unit (CPU)
 	- Registers
@@ -66,7 +66,7 @@ Every variable must be declared with a data type (_strongly typed_)
 One of the uses is to define a macro for a constant value
 Eg: `#define PI 3.142 // use all CAP for macro`
 
-![[Macro.png|500]]
+![500](../Attachments/Macro.png)
 
 ## Input/Output
 
@@ -274,7 +274,7 @@ printf("a = %d; b = %d\n", a, b); //Gives a = 0; b = 1
 
 ## Evaluation of Boolean Expressions
 
-![[Evaluation of boolean expressions.png]]
+![Evaluation of boolean expressions](../Attachments/Evaluation%20of%20boolean%20expressions.png)
 
 ```c
 int x, y, z,
@@ -307,13 +307,13 @@ In a nested loop, break only breaks out of the inner-most loop that contains the
 
 ### Continue in a loop
 
-![[Continue in a loop.png|400]]
+![400](../Attachments/Continue%20in%20a%20loop.png)
 
 In a nested loop, continue only skips to the next iteration of the inner-most loop that contains the continue statement.
 # Summary
 
-<span class="center-menu">[[#Compute#Side effect]]
-[[#Selection Structures#Switch]]
-[[#Short-Circuit Evaluation]]
-[[#Repetition Structures#Continue in a loop]]
+<span class="center-menu">[](#Compute#Compute#Side%20effect)
+[](#Selection%20Structures#Selection%20Structures#Switch)
+[Short-Circuit Evaluation](#Short-Circuit%20Evaluation)
+[](#Repetition%20Structures#Repetition%20Structures#Continue%20in%20a%20loop)
 </span>

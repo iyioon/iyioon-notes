@@ -1,4 +1,4 @@
-<span class="right-menu">My Solution to <br>[[CS2040_tut01.pdf|Week 3 Tutorial 1]]</span>
+<span class="right-menu">My Solution to <br>[Week 3 Tutorial 1](CS2040_tut01.pdf)</span>
 
 ## Problem 1 Java Review
 

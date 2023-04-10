@@ -1,11 +1,11 @@
 # Linear Systems & Gaussian Elimination
 
-<span class="center-menu">[[MA2001-Chapter1.pdf#page=28|Solving linear system in row-echelon form]]
-[[MA2001-Chapter1.pdf#page=30|Method of turning a augmented matrix into row-echelon form]]
-[[MA2001-Chapter1.pdf#page=33|From row-echelon form to reduced row-echelon form]]
-[[MA2001-Chapter1.pdf#page=35|Consistency]]
-[[MA2001-Chapter1.pdf#page=38|Notations]]
-[[MA2001-Chapter1.pdf#page=50|Homogeneous Linear Systems]]
+<span class="center-menu">[](MA2001-Chapter1.pdf#page=28%7CSolving%20linear%20system%20in%20row-echelon%20form)
+[](MA2001-Chapter1.pdf#page=30%7CMethod%20of%20turning%20a%20augmented%20matrix%20into%20row-echelon%20form)
+[](MA2001-Chapter1.pdf#page=33%7CFrom%20row-echelon%20form%20to%20reduced%20row-echelon%20form)
+[](MA2001-Chapter1.pdf#page=35%7CConsistency)
+[](MA2001-Chapter1.pdf#page=38%7CNotations)
+[](MA2001-Chapter1.pdf#page=50%7CHomogeneous%20Linear%20Systems)
 </span>
 
 ## Consistency 

@@ -20,7 +20,7 @@
 
 - Binary bits of instructions and data
 
-![[Abstraction.png|300]]
+![300](../Attachments/Abstraction.png)
 
 
 
@@ -28,8 +28,8 @@
 
 ### Abstraction layers
 
-![[Abstraction Layers.png|c|500]]
-![[Level of Representation.png|c|500]]
+![c|500](../Attachments/Abstraction%20Layers.png)
+![c|500](../Attachments/Level%20of%20Representation.png)
 
 ## So, What is a Computer ?
 
@@ -46,7 +46,7 @@ From computer organisation perspective, we study the components and how they wor
 - Hard drive 
 - Cooling fan
 - I/O Devices
-![[Computer Components.png|c|300]]
+![c|300](../Attachments/Computer%20Components.png)
 
 ## Why study Computer Organisation ?
 

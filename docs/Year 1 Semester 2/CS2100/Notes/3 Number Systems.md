@@ -6,7 +6,7 @@
 
 Data is represented depending on its type. This is why C requires to declare datatype. 
 
-![[How data is represented.png|400]]
+![400](../Attachments/How%20data%20is%20represented.png)
 
 ### Unit
 
@@ -53,14 +53,14 @@ In Verilog, the following values are the same
 To Convert a _whole number_ to binary:
 $(43)_{10}=(101011)_2$
 
- ![[Repeated Divison-by-2.png|200]]
+ ![200](../Attachments/Repeated%20Divison-by-2.png)
 
 ### Repeated Multiplication-by-2
 
 To convert _decimal fractions_ to binary:
 $(0.3125)_{10}=(.0101)_2$ 
 
-![[Repeated Multiplication-by-2.png|200]]
+![200](../Attachments/Repeated%20Multiplication-by-2.png)
 
 ## Conversion between decimal and other Bases
 
@@ -74,16 +74,16 @@ $(0.3125)_{10}=(.0101)_2$
 
 ## Conversion Between Bases
 
-![[Conversion between bases.png|500]]
+![500](../Attachments/Conversion%20between%20bases.png)
 
-![[Binary to OctalHexadecimal Conversion.png|500]]
+![500](../Attachments/Binary%20to%20OctalHexadecimal%20Conversion.png)
 
 ## ASCII Code
 
 -  American Standard Code for Information Interchange
 -  7 bits, plus 1 parity bit (odd or even parity
 
-![[ASCII table.png|500]]
+![500](../Attachments/ASCII%20table.png)
 
 Note: If you want to convert ASCII number to binary number, subtract ASCII 0 from ASCII number. Eg. ASCII 9 to binary 9 is: 0111001-0110000 = 1001
 
@@ -101,7 +101,7 @@ There are 3 common representations for signed binary numbers
 	- 1 for -
 	- eg $00100001_{sm}$ (sm is used to indicate sign-and-magnitude)
 
-![[Sign-and-Magnitude.png|300]]
+![300](../Attachments/Sign-and-Magnitude.png)
 
 - Largest value: 01111111 = $+127_{10}$
 - Smallest value: 11111111 = $-127_{10}$
@@ -173,14 +173,14 @@ Algorithm for subtraction of integers, $A-B=A+(-B)$
 
 ### Excess Representation
 
-![[Excess Representation.png|600]]
+![600](../Attachments/Excess%20Representation.png)
 
 ## Real Numbers
 
 Due to the finite number of bits, real number are often represented in their approximate values.
 ### Fixed Point Representation
 
-![[Fixed-Point Representatino.png|400]]
+![400](../Attachments/Fixed-Point%20Representatino.png)
 
 Eg $011010.11_{2 \mathrm{~s}}=26.75_{10}$
 
@@ -196,8 +196,8 @@ Examples:
 
 #### IEEE 754 Floating-Point Rep
 
-![[IEEE.png|500]]
+![500](../Attachments/IEEE.png)
 
-![[IEEE2.png|500]]
+![500](../Attachments/IEEE2.png)
 
-![[IEEE4.png|500]]
+![500](../Attachments/IEEE4.png)

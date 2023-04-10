@@ -4,19 +4,19 @@
 
 Recall that in a computer, the processor access the memory to perform a load or store operation. 
 
-![[22 Cache Data Transfer.png|300]]
+![300](../Attachments/22%20Cache%20Data%20Transfer.png)
 
 However, the speed at which these data are travelled are slow. For instance, 
 
  - A 1GHz Processor implies that it takes 1ns per clock cycle.
  - 50ns for DRAM access implies that it takes 50 processor clock cycles per memory access.
- - This speed difference is cased by a faster development of the CPU speed compared to the DRAM access speed. See this [[Lect22_Cache1_full.pdf#page=7|Graph]]. 
+ - This speed difference is cased by a faster development of the CPU speed compared to the DRAM access speed. See this [Graph](Lect22_Cache1_full.pdf#page=7%7CGraph). 
  
 Such performance difference is unfavorable. Therefore, we must find faster memory technology ie cache.  
 
 There are two kinds of memory technology: **DRAM** and **SRAM**
 
-![[22 Cache Two types of RAM.png]]
+![22 Cache Two types of RAM](../Attachments/22%20Cache%20Two%20types%20of%20RAM.png)
 
 | SRAM                           | DRAM                           |
 | ------------------------------ | ------------------------------ |
@@ -26,9 +26,9 @@ There are two kinds of memory technology: **DRAM** and **SRAM**
 | More costly                    | Less costly                    |
 | Uses flip flops                | Used in main memory                               |
 
-SRAM is normally used for cache. Besides these memory there are secondary memory such as [[Lect22_Cache1_full.pdf#page=9|Magnetic Disk]]. 
+SRAM is normally used for cache. Besides these memory there are secondary memory such as [Magnetic Disk](Lect22_Cache1_full.pdf#page=9%7CMagnetic%20Disk). 
 
-In [[Lect22_Cache1_full.pdf#page=10|summary]]: 
+In [summary](Lect22_Cache1_full.pdf#page=10%7Csummary): 
 
 |           |  Capacity   | Latency | Cost/GB  |
 |:---------:|:-----------:|:-------:|:--------:|
@@ -58,17 +58,17 @@ Why does this work?
 
 **Spatial locality:** If an item is referenced, nearby items will tend to be referenced soon. E.g., you access the 1st, 2nd... element in a array.
 
-[[Lect22_Cache1_full.pdf#page=17|Diagram]]. Our aim is to capture the working set and keep it in the memory closet to CPU
+[Diagram](Lect22_Cache1_full.pdf#page=17%7CDiagram). Our aim is to capture the working set and keep it in the memory closet to CPU
 
 ### Cache location
 
 To improve the access time of the data, **cache** (SRAM) memory is placed in between the processor and the memory (DRAM). 
 
-![[22 Cache Cache Location.png|500]]
+![500](../Attachments/22%20Cache%20Cache%20Location.png)
 
 ### Memory Access Time
 
-Cache works by bringing extra "books" that may be needed soon. Hence there is a probability involved. [[Lect22_Cache1_full.pdf#page=19|Diagram]]. Lets say the processor tries to access a data. It can either be in the cache (hit) or in the memory (miss).
+Cache works by bringing extra "books" that may be needed soon. Hence there is a probability involved. [Diagram](Lect22_Cache1_full.pdf#page=19%7CDiagram). Lets say the processor tries to access a data. It can either be in the cache (hit) or in the memory (miss).
 
 **Hit**: Data is in cache (e.g., X)
 
@@ -105,7 +105,7 @@ Recall that a word of data is transferred from the memory to the processor. But 
 	- e.g.: 16-byte block $\cong 4$-word block (MIPS)
 	- 32-byte block $\cong 8$-word block 
 
-![[22 Cache Memory to Cache Mapping.png]]
+![22 Cache Memory to Cache Mapping](../Attachments/22%20Cache%20Memory%20to%20Cache%20Mapping.png)
 
 **Block number** is the left 2 bits for the example above.
 **Block offset** is the remaining bits.
@@ -114,7 +114,7 @@ Recall that a word of data is transferred from the memory to the processor. But 
 
 In the previous section, we have divided the memory address into two portions: **Block number** and **offset**. Now lets takes the block number and map them to the cache index. This can be achieved by dividing the block number again into two portions: **tag number** and  **cache index**
 
-![[22 Cache Direct mapped cache.png]]
+![22 Cache Direct mapped cache](../Attachments/22%20Cache%20Direct%20mapped%20cache.png)
 
 If number of Cache Blocks = $2^M \to$ the last M bits of the block number is the **cache index**. E.g. Cache has $2^2=4$ blocks $\to$ last 2 bits of the block number is the cache index.
 
@@ -122,7 +122,7 @@ Multiple memory blocks can map to the same cache block $\to$ Same cache index. H
 
 In summary the memory address is divided into the following sections.
 
-![[22 Cache Directed Mapped summary.png|400]]
+![400](../Attachments/22%20Cache%20Directed%20Mapped%20summary.png)
 
 ### Cache Structure
 
@@ -141,12 +141,12 @@ With this information, cache hit can be determined with
 
 **For example**: 
 
-![[22 Cache Mapping example.png]]
+![22 Cache Mapping example](../Attachments/22%20Cache%20Mapping%20example.png)
 
 
 With this, lets say we want to determine the cache hit for a particular memory address of the data you are looking for. 
 
-![[22 Cache Circuitry.png]]
+![22 Cache Circuitry](../Attachments/22%20Cache%20Circuitry.png)
 
 1. Use the index to go to the correct row in the cache. E.g. 2
 2. Determine if the data is in the cache by checking 
@@ -157,34 +157,34 @@ With this, lets say we want to determine the cache hit for a particular memory a
 
 ### Reading Data Example
 
-To explore further how the directed mapped cache works, see this [[Lect22_Cache1_full.pdf#page=30|example]]:
+To explore further how the directed mapped cache works, see this [](Lect22_Cache1_full.pdf#page=30%7Cexample):
 
-Given a [[#Direct Mapped Cache|Direct Mapped]] 16KB cache: 16-byte blocks $\times$ 1024 cache blocks. Trace the following memory accesses:
+Given a [Direct Mapped](#Direct%20Mapped%20Cache) 16KB cache: 16-byte blocks $\times$ 1024 cache blocks. Trace the following memory accesses:
 
-![[22 Cache Reading data.png|400]]
+![400](../Attachments/22%20Cache%20Reading%20data.png)
 
 Lets begin with the first address.
 
-![[22 Cache.png|400]]
+![400](../Attachments/22%20Cache.png)
 
 **Step 1:** Check Cache Block at index 1
 **Step 2:** Data i block 1 is invalid (Cold/Compulsory Miss)
 
-![[22 Cache-1.png|600]]
+![600](../Attachments/22%20Cache-1.png)
 
 **Step 3:** Load 16 bytes from memory; Set Tag and Valid bit
 
-![[22 Cache-2.png|600]]
+![600](../Attachments/22%20Cache-2.png)
 
 **Step 4:** Return Word 1 (byte offset = 4) to Register
 
-See [[Lect22_Cache1_full.pdf#page=36|here]] for the remaining addresses.
+See [here](Lect22_Cache1_full.pdf#page=36%7Chere) for the remaining addresses.
 
 ### Summary
 
-![[22 Cache-3.png]]
+![22 Cache-3](../Attachments/22%20Cache-3.png)
 
-See [[Lect22_Cache1_full.pdf#page=53|here]] for another example.
+See [here](Lect22_Cache1_full.pdf#page=53%7Chere) for another example.
 ## Types of Cache Misses
 
 **Compulsory misses**
@@ -203,7 +203,7 @@ See [[Lect22_Cache1_full.pdf#page=53|here]] for another example.
 
 ## Writing Data
 
-When we want to write data to the memory, we must consider the fact that the data is in both the memory and the cache. In this [[Lect22_Cache1_full.pdf#page=62|example]] when we write a data to a cache, it does not reflect the data in the memory. Cache and main memory are inconsistent!
+When we want to write data to the memory, we must consider the fact that the data is in both the memory and the cache. In this [example](Lect22_Cache1_full.pdf#page=62%7Cexample) when we write a data to a cache, it does not reflect the data in the memory. Cache and main memory are inconsistent!
 
 **Solution 1:** Write-through cache (easy but slow)
 
@@ -218,7 +218,7 @@ When we want to write data to the memory, we must consider the fact that the dat
 
 **Problem:** Write will operate at the speed of main memory
 
-![[22 Cache-4.png|300]]
+![300](../Attachments/22%20Cache-4.png)
 
 **Solution:** Put a write buffer between cache and main memory
 
@@ -251,7 +251,7 @@ On a **Read Miss**
 
 In summary: 
 
-![[22 Cache-5.png]]
+![22 Cache-5](../Attachments/22%20Cache-5.png)
 
 **Reading**: Large and Fast: Exploiting Memory Hierarchy.
 
@@ -270,49 +270,49 @@ Using larger block size has trade offs:
 - Larger miss penalty: Takes longer time to fill up the block
 - If block size is too big relative to cache size $\to$ too few cache blocks $\to$ miss rate will go up
 
-![[22 Cache-6.png]]
+![22 Cache-6](../Attachments/22%20Cache-6.png)
 
-[[Lect23_Cache2_full.pdf#page=5|Another diagram]]
+[diagram](Lect23_Cache2_full.pdf#page=5%7CAnother%20diagram)
 
 ## Set Associative (SA) Cache
 
-SA Cache is a another type of cache used to solve conflict misses. See [[#Types of Cache Misses]] for recap. 
+SA Cache is a another type of cache used to solve conflict misses. See [Types of Cache Misses](#Types%20of%20Cache%20Misses) for recap. 
 
-SA cache can have N-way. N refers to number of blocks in each set. Within the set, a memory block can be placed in any of the N cache blocks in the set. [[Lect23_Cache2_full.pdf#page=8|PDF]]. For instance a 2-way Set Associative Cache looks as follows:
+SA cache can have N-way. N refers to number of blocks in each set. Within the set, a memory block can be placed in any of the N cache blocks in the set. [PDF](Lect23_Cache2_full.pdf#page=8%7CPDF). For instance a 2-way Set Associative Cache looks as follows:
 
-![[22 Cache-7.png]]
+![22 Cache-7](../Attachments/22%20Cache-7.png)
 
 There is a need to search both blocks to look for the memory block.
 
 ### Mapping
 
-Just like the [[#Direct Mapped Cache]] we have to map the addresses to the cache.
+Just like the [Direct Mapped Cache](#Direct%20Mapped%20Cache) we have to map the addresses to the cache.
 
-![[22 Cache-8.png|500]]
+![500](../Attachments/22%20Cache-8.png)
 
 ### Example
 
-![[22 Cache-9.png|500]]
+![500](../Attachments/22%20Cache-9.png)
 
-![[22 Cache-10.png]]
+![22 Cache-10](../Attachments/22%20Cache-10.png)
 
 
 ### Advantage
 
 Lets compare SA Cache with Direct Mapped Cache to see how it avoids conflict Miss. In the Direct Mapped Cache:
 
-![[22 Cache-11.png|500]]
+![500](../Attachments/22%20Cache-11.png)
 
 
 However in the SA Cache:
 
-![[22 Cache-12.png|500]]
+![500](../Attachments/22%20Cache-12.png)
 
-![[22 Cache-13.png|400]]
+![400](../Attachments/22%20Cache-13.png)
 
 ### Example 2
 
-Visit [[Lect23_Cache2_full.pdf#page=17]] For detailed example
+Visit [PDF](Lect23_Cache2_full.pdf#page=17) For detailed example
 
 ## Fully Associative (FA) Cache
 
@@ -327,14 +327,14 @@ A memory block can be placed in any location in the cache
 
 In FA Cache there is only two portions. The tag and the Offset
 
-![[22 Cache-14.png]]
+![22 Cache-14](../Attachments/22%20Cache-14.png)
 
 ### Example
 
 - 4KB cache size and 16-Byte block size
 - Compare every tags (256) and valid bits in parallel
 
-![[22 Cache-15.png|500]]
+![500](../Attachments/22%20Cache-15.png)
 
 ### Performance
 
@@ -346,7 +346,7 @@ In FA Cache there is only two portions. The tag and the Offset
 
 ## Block Replacement Policy
 
-This only applies to the [[#Set Associative (SA) Cache]] and [[#Fully Associative (FA) Cache]] because
+This only applies to the [Set Associative (SA) Cache](#Set%20Associative%20(SA)%20Cache)and [Fully Associative (FA) Cache](#Fully%20Associative%20(FA)%20Cache) because
 
 - Can choose where to place a memory block
 - Potentially replacing another cache block if full
@@ -360,7 +360,7 @@ This only applies to the [[#Set Associative (SA) Cache]] and [[#Fully Associativ
 
 **Example:** Lets say that the following memory accesses are done: `0 4 8 12 4 16 12 0 4` in a 4-way SA cache. Figure below shows the <u>data structure</u> (not the cache) to keep track which one is most recently used. By the time `0 4 8 12` is accessed, we see that in the first line, 12 is the most recently used and 0 is the least recently used.
 
-![[22 Cache-16.png|400]]
+![400](../Attachments/22%20Cache-16.png)
 
 Then when the next access `4` is performed, it should move up the data structure shown by the second line. Next when `16` is accessed, it is a miss, hence the LRU (`0`) is chosen to evicted illustrated by the 3rd line.
 
@@ -374,10 +374,10 @@ Then when the next access `4` is performed, it should move up the data structure
 - Random replacement (RR)
 - Least frequently used (LFU)
 
-Visit [[Lect23_Cache2_full.pdf#page=31]] for comparison using example.
+Visit [PDF](Lect23_Cache2_full.pdf#page=31) for comparison using example.
 ## Summary
 
-Visit [[Lect23_Cache2_full.pdf#page=35]]
+Visit [PDF](Lect23_Cache2_full.pdf#page=35)
 
 
 ## Exploration: Multilevel Cache
@@ -389,5 +389,5 @@ It is possible to separate the cache into
 
 It is also possible to have different level of caches.
 
-Visit [[Lect23_Cache2_full.pdf#page=38]]
+Visit [PDF](Lect23_Cache2_full.pdf#page=38)
 

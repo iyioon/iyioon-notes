@@ -26,39 +26,17 @@
   max-height: 500px;
 }
 
-/* EDIT MODE */
-
-.HyperMD-header.HyperMD-header-1 {
-  text-align: center;
+h1 {
+  text-align: center !important;
 }
 
-/* PREVIEW MODE */
-
-.markdown-preview-view h1 {
-  text-align: center;
+h2 {
+  border-bottom: 1px solid #ccc !important; /**Add Bottom border**/
+  padding-top: 100px !important;
 }
 
-.markdown-preview-view h2 {
-  border-bottom: 1px solid #ccc; /**Add Bottom border**/
-}
-.cm-header-2 {
-  border-bottom: 1px solid #ccc; /**Add Bottom border**/
-}
-
-.markdown-preview-view h2 {
-  padding-top: 60px !important;
-}
-
-.HyperMD-header.HyperMD-header-2 {
-  padding-top: 60px !important;
-}
-
-.markdown-preview-view h3 {
-  padding-top: 60px !important;
-}
-
-.HyperMD-header.HyperMD-header-3 {
-  padding-top: 60px !important;
+h3 {
+  padding-top: 100px !important;
 }
 
 img {

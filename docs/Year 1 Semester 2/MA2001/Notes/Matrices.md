@@ -114,9 +114,9 @@ Let $A$ be an invertible matrix.
 
 ## Elementary row operation using matrix multiplication
 
-![[Chapter 2 Elementary Matrices.png]]
+![Chapter 2 Elementary Matrices](../Attachments/Chapter%202%20Elementary%20Matrices.png)
 
-[[MA2001-Chapter2.pdf#page=29|Example]]
+[](MA2001-Chapter2.pdf#page=29%7CExample)
 
 *Important Note*: $E_6 \cdots E_2 E_1 A=I$
 Every elementary matrix is invertible
@@ -140,11 +140,11 @@ $\therefore \quad \boldsymbol{A}=\boldsymbol{E}_1^{-1} \boldsymbol{E}_2^{-1} \cd
 4. The reduced row-echelon form of $\boldsymbol{A}$ is $\boldsymbol{I}$.
 5. $\boldsymbol{A}$ is the product of elementary matrices.
 
-[[MA2001-Chapter2.pdf#page=45|Proof]]
+[](MA2001-Chapter2.pdf#page=45%7CProof)
 
 ## Find Inverse
 
-From [[MA2001-Chapter2.pdf#page=46|Page 46]]
+From [](MA2001-Chapter2.pdf#page=46%7CPage%2046)
 
 Let $A$ be an invertible matrix of order $n$. Its reduced row-echelon form is $I_n$.
 
@@ -182,7 +182,7 @@ $\Leftrightarrow$ Corresponding elementary column operation to $\boldsymbol{A}$.
 ### Elementary Row Operation
 
 Get the determinant of $A$ from multiplying the determinant of $E_{1},E_{2}\dots$
-[[MA2001-Chapter2.pdf#page=61|page=61]]
+[](MA2001-Chapter2.pdf#page=61%7Cpage=61)
 
 ### Properties
 
@@ -197,7 +197,7 @@ Get the determinant of $A$ from multiplying the determinant of $E_{1},E_{2}\dots
 	- For any elementary matrix $\boldsymbol{E}$ of the same order,
 		- $\operatorname{det}(\boldsymbol{E} \boldsymbol{A})=\operatorname{det}(\boldsymbol{E}) \operatorname{det}(\boldsymbol{A})$.
 
-[[MA2001-Chapter2.pdf#page=63|More Properties]]
+[](MA2001-Chapter2.pdf#page=63%7CMore%20Properties)
 
 ### Cofactor Expansion
 
@@ -213,8 +213,8 @@ Then for any $i$ and $j$,
 In evaluating the determinant using cofactor expansion,
 expand along the row or column with the most zeros. (for ease of calculation)
 
-[[MA2001-Chapter2.pdf#page=69|Example]]
-[[#Cofactor]]
+[](MA2001-Chapter2.pdf#page=69%7CExample)
+[Cofactor](#Cofactor)
 
 ### Finding Determinant
 
@@ -232,11 +232,11 @@ Note the following formulas:
 
 $\begin{aligned} & \operatorname{det}(\boldsymbol{A})=\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right) \\ & \operatorname{det}(\boldsymbol{A} \boldsymbol{B})=\operatorname{det}(\boldsymbol{A}) \operatorname{det}(\boldsymbol{B}) \\ & \operatorname{det}(c \boldsymbol{A})=c^n \operatorname{det}(\boldsymbol{A}), \text { where } \boldsymbol{A} \text { is } n \times n \\ & \operatorname{det}\left(\boldsymbol{A}^{-1}\right)=\operatorname{det}(\boldsymbol{A})^{-1} \text { if } \boldsymbol{A} \text { is invertible. }\end{aligned}$
 
-[[MA2001-Chapter2.pdf#page=70|Example]]
+[](MA2001-Chapter2.pdf#page=70%7CExample)
 
 ## Adjoint Matrix
 
-[[MA2001-Chapter2.pdf#page=71]]
+[](MA2001-Chapter2.pdf#page=71)
 
 
 ## Cramer's Rule
@@ -251,7 +251,7 @@ Example. Let $\boldsymbol{A}=\left(\begin{array}{ll}a_{11} & a_{12} \\ a_{21} & 
 - Suppose that $\boldsymbol{A}$ is invertible. $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ implies
 $\boldsymbol{x}=\frac{1}{\left|\begin{array}{ll}a_{11} & a_{12} \\ a_{21} & a_{22}\end{array}\right|}\left(\begin{array}{ll}\left|\begin{array}{ll}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right| \\ \left|\begin{array}{ll}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|\end{array}\right)$
 
-[[MA2001-Chapter2.pdf#page=74|Example]]
+[](MA2001-Chapter2.pdf#page=74%7CExample)
 
 ---
 
@@ -259,4 +259,4 @@ $\boldsymbol{x}=\frac{1}{\left|\begin{array}{ll}a_{11} & a_{12} \\ a_{21} & a_{2
 
 ## Cofactor 
 
-[[MA2001-Chapter2.pdf#page=57]]
+[](MA2001-Chapter2.pdf#page=57)

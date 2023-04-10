@@ -1,4 +1,4 @@
-<span class="right-menu">My solution to<br>[[CS2040_Recitation+01.pdf|Recitation 01]]</span>
+<span class="right-menu">My solution to<br>[Recitation 01](CS2040_Recitation+01.pdf)</span>
 ## Problem 1. Order of Growth (Review)
 
 **Problem 1.a.** Consider the following function isPrime for checking if an integer $n$ is prime:

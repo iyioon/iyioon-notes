@@ -1,6 +1,6 @@
 # Vector Spaces
 
-<span class="center-menu">[[MA2001-Chapter3.pdf]]</span>
+<span class="center-menu">[MA2001-Chapter3](MA2001-Chapter3.pdf)</span>
 ## Vector
 
 The arrow from the origin $O$ to the point $P$ is called a vector, denoted by $\overrightarrow{O P}=v=(a, b)$.
@@ -17,13 +17,13 @@ $\boldsymbol{v}=\left(v_1, v_2, \ldots, v_n\right)$ for real numbers $v_1, v_2, 
 
 ## Implicit and Explicit Forms
 
-Visit [[MA2001-Chapter3.pdf#page=9]]
+Visit [](MA2001-Chapter3.pdf#page=9)
 
 ## Linear Combination 
 
-Visit [[MA2001-Chapter3.pdf#page=13]]
+Visit [](MA2001-Chapter3.pdf#page=13)
 
-![[Chapter 3 Linear combination Example.png]]
+![Chapter 3 Linear combination Example](../Attachments/Chapter%203%20Linear%20combination%20Example.png)
 
 Treat the vectors as column vectors.
 
@@ -31,11 +31,11 @@ Treat the vectors as column vectors.
 
 The set of all linear combination
 
-Visit [[MA2001-Chapter3.pdf#page=15]]
+Visit [](MA2001-Chapter3.pdf#page=15)
 
 ### Criterion for $\operatorname{span}(S)=\mathbb{R}^n$
 
-Visit [[MA2001-Chapter3.pdf#page=17]]
+Visit [](MA2001-Chapter3.pdf#page=17)
 
 Let $S=\left\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_k\right\} \subseteq \mathbb{R}^n$.
 1. View each $\boldsymbol{v}_j$ as a column vector.
@@ -46,19 +46,19 @@ Let $S=\left\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_k\right
 
 ### Properties of Linear Spans
 
-Visit [[MA2001-Chapter3.pdf#page=19]]
+Visit [](MA2001-Chapter3.pdf#page=19)
 
 ### To show $span ({u_{1},u_{2},\dots)=span({v_{1},v_{2}\dots})}$ 
 
-[[MA2001-Chapter3.pdf#page=22|Example]]
+[](MA2001-Chapter3.pdf#page=22%7CExample)
 
 ## Subspaces
 
-Visit [[MA2001-Chapter3.pdf#page=23]]
+Visit [](MA2001-Chapter3.pdf#page=23)
 
-In the form Let $V_1=\{(a+4 b, a) \mid a, b \in \mathbb{R}\}$. [[MA2001-Chapter3.pdf#page=24|Example]]
+In the form Let $V_1=\{(a+4 b, a) \mid a, b \in \mathbb{R}\}$. [](MA2001-Chapter3.pdf#page=24%7CExample)
 
-In the form Let $V_2=\{(x, y, z) \mid x+y-z=0\}$.[[MA2001-Chapter3.pdf#page=24|Example]]
+In the form Let $V_2=\{(x, y, z) \mid x+y-z=0\}$.[](MA2001-Chapter3.pdf#page=24%7CExample)
 
 _Important_ Recall that a subspace $V$ is of the form $\operatorname{span}(S)$. Then
 
@@ -66,22 +66,22 @@ _Important_ Recall that a subspace $V$ is of the form $\operatorname{span}(S)$. 
 - $c \in \mathbb{R} \& \boldsymbol{v} \in V \Rightarrow c \boldsymbol{v} \in V$,
 - $\boldsymbol{u} \in V \& v \in V \Rightarrow \boldsymbol{u}+\boldsymbol{v} \in V$.
 
-If any of the above fails, then $V$ is not a subspace (of $\mathbb{R}^n$ ). [[MA2001-Chapter3.pdf#page=24]]
+If any of the above fails, then $V$ is not a subspace (of $\mathbb{R}^n$ ). [](MA2001-Chapter3.pdf#page=24)
 
 ### Solution Space
 
-Visit [[MA2001-Chapter3.pdf#page=26]]
+Visit [](MA2001-Chapter3.pdf#page=26)
 
 ## Linear Independence
 
 
-Visit [[MA2001-Chapter3.pdf#page=29]]
+Visit [](MA2001-Chapter3.pdf#page=29)
 
-[[MA2001-Chapter3.pdf#page=30\|Properties]]
+[](MA2001-Chapter3.pdf#page=30%5C%7CProperties)
 
 ## Vector Spaces
 
-Visit [[MA2001-Chapter3.pdf#page=34]]
+Visit [](MA2001-Chapter3.pdf#page=34)
 
 Definition. A set $V$ is called a _vector space_ if
 
@@ -93,7 +93,7 @@ If $W$ and $V$ are vector spaces such that $W \subseteq V$,
 
 ## Bases
 
-Visit [[MA2001-Chapter3.pdf#page=34]]
+Visit [](MA2001-Chapter3.pdf#page=34)
 
 Definition. Let $S=\left\{\boldsymbol{v}_1, \ldots, \boldsymbol{v}_k\right\}$ be a subset of a vector space $V$. Then $S$ is called a basis (plural bases) for $V$ if
 
@@ -105,11 +105,11 @@ Let $S=\{(1,1,1,1),(0,0,1,2),(-1,0,0,1)\}$.
 - Let $|S|$ be the number of vectors in $S$. Then $|S|=3$.
 - So $\operatorname{span}(S) \neq \mathbb{R}^4$; thus $S$ is NOT a basis for $\mathbb{R}^4$.
 
-[[MA2001-Chapter3.pdf#page=36\|Properties]]
+[](MA2001-Chapter3.pdf#page=36%5C%7CProperties)
 
 ## Coordinate Vector
 
-Visit [[MA2001-Chapter3.pdf#page=37]]
+Visit [](MA2001-Chapter3.pdf#page=37)
 
 **Definition**. Let $S=\left\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_k\right\}$ be a basis for a vector space $V$.
 
@@ -122,12 +122,12 @@ The order matters
 
 ## Standard Basis
 
-Visit [[MA2001-Chapter3.pdf#page=39]]
+Visit [](MA2001-Chapter3.pdf#page=39)
 
 
 ## Criterion for Bases
 
-Visit [[MA2001-Chapter3.pdf#page=42]]
+Visit [](MA2001-Chapter3.pdf#page=42)
 
 Theorem. Let $\boldsymbol{A}$ be a square matrix of order $n$. Then the following are equivalent:
 
@@ -141,44 +141,44 @@ Theorem. Let $\boldsymbol{A}$ be a square matrix of order $n$. Then the followin
 8. The columns of $\boldsymbol{A}$ form a basis for $\mathbb{R}^n$.
 ## Dimension
 
-$\operatorname{dim}(V+W)=\operatorname{dim}(V)+\operatorname{dim}(W)-\operatorname{dim}(V \cap W)$. See example [[linear-algebra-concepts-and-techniques-on-euclidean-spaces.pdf#page=134|Q43 & 44]]
+$\operatorname{dim}(V+W)=\operatorname{dim}(V)+\operatorname{dim}(W)-\operatorname{dim}(V \cap W)$. See example [](linear-algebra-concepts-and-techniques-on-euclidean-spaces.pdf#page=134%7CQ43%20&%2044)
 
-Visit [[MA2001-Chapter3.pdf#page=43]]
+Visit [](MA2001-Chapter3.pdf#page=43)
 
 Number of non pivots.
 
 ## Transition Matrices
 
-Visit [[MA2001-Chapter3.pdf#page=48]]
+Visit [](MA2001-Chapter3.pdf#page=48)
 
-[[MA2001-Chapter3.pdf#page=50|Example]] of using transition matrix to get the coordinate vector relative to...
-[[linear-algebra-concepts-and-techniques-on-euclidean-spaces.pdf#page=135|Good example Q49]]
+[](MA2001-Chapter3.pdf#page=50%7CExample) of using transition matrix to get the coordinate vector relative to...
+[](linear-algebra-concepts-and-techniques-on-euclidean-spaces.pdf#page=135%7CGood%20example%20Q49)
 ## Row Spaces and Column Spaces
 
-Visit [[MA2001-Chapter4.pdf#page=2]]
+Visit [](MA2001-Chapter4.pdf#page=2)
 
 ### How to find basis
 
-Visit [[MA2001-Chapter4.pdf#page=9]]
+Visit [](MA2001-Chapter4.pdf#page=9)
 
 **Using Row Space:** View the vectors as row vector. Turn it into REF. The non zero rows of REF form the basis. However the basis are now different vectors.
 
 **Using Column Space**:
 
-![[Vector Spaces Using Column Space to find the basis.png]]
+![Vector Spaces Using Column Space to find the basis](../Attachments/Vector%20Spaces%20Using%20Column%20Space%20to%20find%20the%20basis.png)
 
 ### How to extend $S$ to a basis for $R^n$
 
-Visit [[MA2001-Chapter4.pdf#page=10]]
+Visit [](MA2001-Chapter4.pdf#page=10)
 
 ### Consistency
 
-Visit [[MA2001-Chapter4.pdf#page=11]]
+Visit [](MA2001-Chapter4.pdf#page=11)
 
 
 ## Rank
 
-Visit [[MA2001-Chapter4.pdf#page=12]]
+Visit [](MA2001-Chapter4.pdf#page=12)
 
 **Theorem:** The dimension of the row space of $A$ = the dimension of the column space of $A$.
 
@@ -199,11 +199,11 @@ Suppose $Ax=b$.
 - If $b$ belong to the column space of $A$ then, rank($A$) = rank($A|b$)
 - Else rank($A$) = rank($A|b$)+1
 
-Visit [[MA2001-Chapter4.pdf#page=14]]
+Visit [](MA2001-Chapter4.pdf#page=14)
 
 ### Properties
 
-Visit [[MA2001-Chapter4.pdf#page=15]]
+Visit [](MA2001-Chapter4.pdf#page=15)
 
 ## Null Space and Nullity
 
@@ -214,7 +214,7 @@ The dimension of the nullspace is called the nullity of $\boldsymbol{A}$, denote
 **Notation**. From now on, unless otherwise stated,
 vectors in nullspace are viewed as column vectors.
 
-Visit [[MA2001-Chapter4.pdf#page=16]]
+Visit [](MA2001-Chapter4.pdf#page=16)
 
 ### Dimension Theorem
 
@@ -223,9 +223,9 @@ $$
 \operatorname{rank}(\boldsymbol{A})+\operatorname{nullity}(\boldsymbol{A})=n \text {. }
 $$
 
-Visit [[MA2001-Chapter4.pdf#page=17]]
+Visit [](MA2001-Chapter4.pdf#page=17)
 
 
 ### Inhomogeneous Linear System
 
-Visit [[MA2001-Chapter4.pdf#page=19]]
+Visit [](MA2001-Chapter4.pdf#page=19)
