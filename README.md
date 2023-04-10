@@ -2,10 +2,6 @@
 
 This is my digital garden where I store everything I learn during my time in NUS.
 
-My computer science journey:
-
--   [Year 1 Semester 1](app://obsidian.md/Year%201%20Semester%201)
--   [Year 1 Semester 2](app://obsidian.md/Year%201%20Semester%202)
 
 ## Before you start
 
