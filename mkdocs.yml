@@ -7,6 +7,7 @@ theme:
     - navigation.footer
     - content.code.copy
     - content.code.select
+    - navigation.top
 
   palette:
     # Light mode
