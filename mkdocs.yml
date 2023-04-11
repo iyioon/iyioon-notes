@@ -2,7 +2,8 @@ site_name: iyioon Archive
 
 theme:
   name: "material"
-  logo: logo.svg
+  logo: logo.png
+  favicon: logo.png
   font:
     text: Roboto
 
