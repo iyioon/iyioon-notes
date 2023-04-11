@@ -1,4 +1,4 @@
-# 17_Combinational Circuits
+# Combinational Circuits
 
 ## Introduction
 

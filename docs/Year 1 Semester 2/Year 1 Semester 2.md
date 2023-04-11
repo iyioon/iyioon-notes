@@ -1,5 +1,5 @@
 ---
-banner: "![bannersky](../Attachment/bannersky.jpeg)"
+banner: "![[../Attachment/bannersky.jpeg]]"
 banner_y: 0.53214
 ---
 # Year 1 Semester 2

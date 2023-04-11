@@ -1,4 +1,4 @@
-# 14_Logic Circuits
+# Logic Circuits
 
 
 ## Logic Gates

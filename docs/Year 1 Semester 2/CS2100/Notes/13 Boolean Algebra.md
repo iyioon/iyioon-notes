@@ -1,4 +1,4 @@
-# 13_Boolean Algebra
+# Boolean Algebra
 
 
 ## Precedence of Operators

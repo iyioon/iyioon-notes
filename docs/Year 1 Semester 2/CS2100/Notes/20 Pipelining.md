@@ -1,10 +1,11 @@
-# 20_Pipelining
+# Pipelining
 
 ## Introduction
 
 > [PDF](Lect20_Pipelining1_full.pdf#page=3)
 
 In the previous MIPS, the data propagates through each component. However, to achieve concurrency, we must have buffers so that when the new instruction is loaded, the next stage is not effected.
+
 ## MIPS Pipeline Stages
 
 > [PDF](Lect20_Pipelining1_full.pdf#page=11)
@@ -32,8 +33,6 @@ In contrast, during the **Pipeline implementation**:
 
 - Each of the five stages are executed in one clock cycle
 - Data required for each stage needs to be stored separately using [registers](Lect20_Pipelining1_full.pdf#page=15%7Cpipeline%20registers)
-
----
 
 ### Pipeline registers
 

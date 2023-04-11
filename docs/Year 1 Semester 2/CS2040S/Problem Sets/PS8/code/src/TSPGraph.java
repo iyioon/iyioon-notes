@@ -26,7 +26,7 @@ public class TSPGraph implements IApproximateTSP {
     }
 
     public static void main(String[] args) {
-        TSPMap map = new TSPMap(args.length > 0 ? args[0] : "../hundredpoints.txt");
+        TSPMap map = new TSPMap(args.length > 0 ? args[0] : "hundredpoints.txt");
         TSPGraph graph = new TSPGraph();
 
         graph.MST(map);

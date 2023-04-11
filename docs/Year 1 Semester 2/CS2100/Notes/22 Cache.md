@@ -1,4 +1,4 @@
-# 22_Cache
+# Cache
 
 ## Introduction
 

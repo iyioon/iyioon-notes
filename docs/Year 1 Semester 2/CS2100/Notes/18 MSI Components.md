@@ -1,4 +1,4 @@
-# 18_MSI Components
+# MSI Components
 
 ## Introduction
 

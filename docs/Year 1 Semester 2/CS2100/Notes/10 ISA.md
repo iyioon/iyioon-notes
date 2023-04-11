@@ -1,4 +1,4 @@
-# 10_ISA
+# ISA
 
 ## Fixed length instruction
 
