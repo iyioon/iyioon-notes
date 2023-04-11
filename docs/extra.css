@@ -28,15 +28,18 @@
 
 h1 {
   text-align: center !important;
+  font-weight: bold !important;
 }
 
 h2 {
   border-bottom: 1px solid #ccc !important; /**Add Bottom border**/
   padding-top: 60px !important;
+  font-weight: bold !important;
 }
 
 h3 {
   padding-top: 60px !important;
+  font-weight: bold !important;
 }
 
 img {
