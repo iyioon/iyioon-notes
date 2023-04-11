@@ -66,6 +66,7 @@ plugins:
   - search
   - roamlinks
   - mermaid2
+  - awesome-pages
 
 extra_javascript:
   - javascripts/mathjax.js
