@@ -1,4 +1,4 @@
-# Control
+# 12_Control
 
 <span class="center-menu">[Lecture PDF](Lect12_Control.pdf%5C)</span>
 ## ALU Control

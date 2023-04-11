@@ -1,4 +1,4 @@
-# Simplification
+# 15_Simplification
 
 ## Half Adder
 

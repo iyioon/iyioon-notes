@@ -1,4 +1,4 @@
-# Sequential Logic
+# 19_Sequential Logic
 
 ## Introduction
 

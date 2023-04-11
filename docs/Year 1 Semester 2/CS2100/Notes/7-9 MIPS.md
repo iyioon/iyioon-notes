@@ -1,4 +1,4 @@
-# MIPS
+# 07_MIPS
 <span class="center-menu">[](Lect07_MIPS1_full_annotated.pdf#page=5%5C%7CInstruction%20set%20architecture)
 [](Lect07_MIPS1_full_annotated.pdf#page=7%5C%7CMachine%20Code%20vs%20Assembly%20Language)
 [](Lect07_MIPS1_full_annotated.pdf#page=10%5C%7CThe%20code%20in%20Action)

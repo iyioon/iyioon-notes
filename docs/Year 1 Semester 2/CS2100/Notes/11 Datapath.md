@@ -1,4 +1,4 @@
-# The Processor: Datapath
+# 11_The Processor: Datapath
 
 <span class="center-menu">[](Lect11_Datapath_full.pdf#page=1%5C%7CLecture%20PDF)</span>
 
