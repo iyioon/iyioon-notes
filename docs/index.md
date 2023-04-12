@@ -25,6 +25,10 @@ The sheer volume of information we receive can be overwhelming at times, which i
 > [!quote] Mortimer J. Adler
 > The purpose of learning is growth, and our minds, unlike our bodies, can continue growing as we continue to live.
 
+## Collaboration
+
+If you're interested in collaborating on these notes, please follow the [guidelines](Guidelines.md) to ensure consistency and maintain a high-quality resource.
+
 ---
 
 <span class="center-menu">[iyioon](https://www.iyioon.com) </span>
