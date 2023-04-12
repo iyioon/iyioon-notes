@@ -1,0 +1,4 @@
+# Segment 2 Empathize
+
+What would you do when you try to understand other people. Do you just walk to them and ask them, "Hey, what do you need and what's your problem?" Unfortunately, it's not that simple. Most people don't know what they actually need, what's their real problem and what can solve their problem. So the best way to understand other people is to think in their perspective and experience their struggles and their excitement. This is what we call empathy. Meaning stepping into someone else's shoes and experience the situation as they do. That way we can create something that are relevant and meaningful for them. Empathizing with others, however, needs some practice and sensitivity. Why? Because we take things for granted, we just assume that what we take for granted is also taken for granted by other people. Is that true, though?
+
