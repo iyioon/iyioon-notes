@@ -4,8 +4,9 @@ This is my digital garden where I archive everything I learn during my time in N
 
 My computer science journey:
 
-- [Year 1 Semester 1](Year%201%20Semester%201/Year%201%20Semester%201.md)
-- [Year 1 Semester 2](Year%201%20Semester%202/Year%201%20Semester%202.md)
+<span class="center-menu">[Year 1 Semester 1](Year%201%20Semester%201/Year%201%20Semester%201.md)<br>[Year 1 Semester 2](Year%201%20Semester%202/Year%201%20Semester%202.md)
+
+</span>
 
 ## Before you adventure
 
@@ -19,7 +20,7 @@ I organize my notes by creating a dedicated folder for each module, ensuring a s
 
 **Motivation:**
 
-The sheer volume of information we receive can be overwhelming at times, which is why I spend a significant amount of time and work organizing my notes Although this meticulous process may be time-consuming, the long-term benefits of having well-structured, easily navigable notes far outweigh the initial investment. A well-maintained "digital archive" saves time in the future and helps to focus on mastering the material rather than relying on short-term memory for exams.
+The sheer volume of information we receive can be overwhelming at times, which is why I spend a significant amount of time and work organizing my notes. Although this meticulous process may be time-consuming, the long-term benefits of having well-structured, easily navigable notes far outweigh the initial investment. A well-maintained "digital archive" helps to focus on mastering the material rather than relying on short-term memory for exams.
 
 > [!quote] Mortimer J. Adler
 > The purpose of learning is growth, and our minds, unlike our bodies, can continue growing as we continue to live.
