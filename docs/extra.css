@@ -78,11 +78,3 @@ em,
 span.cm-em {
   color: #ff0000;
 }
-
-:is(img, svg) {
-  display: block !important;
-  width: px2rem(48px);
-  width: auto !important;
-  height: px2rem(48px);
-  fill: currentColor !important;
-}
