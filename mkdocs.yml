@@ -2,7 +2,7 @@ site_name: iyioon Archive
 
 theme:
   name: "material"
-  logo: logo.png
+  logo: fab.png
   favicon: fab.png
   font:
     text: Roboto
@@ -17,7 +17,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: #191825
+      primary: white
       accent: deep purple
       toggle:
         icon: material/toggle-switch-off-outline
