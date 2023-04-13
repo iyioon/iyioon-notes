@@ -17,7 +17,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
+      primary: #191825
       accent: deep purple
       toggle:
         icon: material/toggle-switch-off-outline
