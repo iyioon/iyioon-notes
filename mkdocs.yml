@@ -70,7 +70,7 @@ plugins:
   - roamlinks
   - mermaid2
   - awesome-pages
-  - callouts
+  - obsidian-support
 
 extra_javascript:
   - javascripts/mathjax.js
