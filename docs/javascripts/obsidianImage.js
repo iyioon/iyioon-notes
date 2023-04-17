@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   for (var i = 0; i < images.length; i++) {
     var matches = images[i].alt.match(/^(\d+)$/);
     if (matches) {
-      images[i].setAttribute('height', matches[1]);
-      images[i].setAttribute('width', 'auto');
+      images[i].setAttribute('width', matches[1]);
     }
   }
 });
