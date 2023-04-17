@@ -64,7 +64,6 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - ObsidianImageExtension
 
 plugins:
   - search
@@ -80,5 +79,6 @@ extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML
   - mathjaxhelper.js
+  - javascripts/obsidianImage.js
 
 extra_css: [extra.css]
