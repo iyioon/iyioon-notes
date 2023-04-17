@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   for (var i = 0; i < images.length; i++) {
     var matches = images[i].alt.match(/^\[(\d+)\]$/);
     if (matches) {
-      images[i].style.maxHeight = matches[1] + "px";
+      images[i].style.height = matches[1] + "px";
     }
   }
 });
