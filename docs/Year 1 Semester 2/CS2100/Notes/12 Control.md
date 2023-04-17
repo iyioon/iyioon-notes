@@ -11,11 +11,11 @@ For `NOR`, the `AND` gate performs $A'\cap b'$ which is equivalent to $(A+B)'$ (
 
 `slt` will not be discussed. (may come out in assessment)
 
-[](Lect12_Control.pdf#page=19)
+[PDF](Lect12_Control.pdf#page=19)
 
 ## Design of ALU control unit: Multilevel Decoding
 
-[](Lect12_Control.pdf#page=22)
+[PDF](Lect12_Control.pdf#page=22)
 
 
 

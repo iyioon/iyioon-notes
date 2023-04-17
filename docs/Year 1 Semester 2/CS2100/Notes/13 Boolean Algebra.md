@@ -11,7 +11,7 @@ Use parenthesis to overwrite precedence
 
 ## Proof using Truth Table
 
-Use truth table to show the two results are the same. Visit [](Lect13_Boolean_Algebra_full.pdf#page=9%5C%7Cpage%209)
+Use truth table to show the two results are the same. Visit [PDF](Lect13_Boolean_Algebra_full.pdf#page=9%5C%7Cpage%209)
 ## Laws of Boolean Algebra
 
 ![Boolean Algebra Laws of Boolean Algebra](../Attachments/Boolean%20Algebra%20Laws%20of%20Boolean%20Algebra.png)
@@ -32,11 +32,11 @@ $$a \cdot(b+c)=(a \cdot b)+(a \cdot c)$$
 
 ## Boolean Functions
 
-Visit [](Lect13_Boolean_Algebra_full.pdf#page=15)
+Visit [PDF](Lect13_Boolean_Algebra_full.pdf#page=15)
 
 ## Complement Functions
 
-Visit [](Lect13_Boolean_Algebra_full.pdf#page=16)
+Visit [PDF](Lect13_Boolean_Algebra_full.pdf#page=16)
 
 ## Standard Forms
 
@@ -76,7 +76,7 @@ First lets start with the basic terms:
 - Examples $x,x \cdot(x+z'),(x+y) \cdot (x'+y+z)$
 
 
-Quiz [](Lect13_Boolean_Algebra_full.pdf#page=19)
+Quiz [PDF](Lect13_Boolean_Algebra_full.pdf#page=19)
 
 ## Minterms and Maxterms
 
@@ -86,7 +86,7 @@ Visit [](Lect13_Boolean_Algebra_full.pdf#page=20)
 
 Each minterm is the complement of its corresponding maxterm.
 
-Example : [](Lect13_Boolean_Algebra_full.pdf#page=22)
+Example : [PDF](Lect13_Boolean_Algebra_full.pdf#page=22)
 
 ### How to convert Boolean expression to Minterm and Maxterm.
 
@@ -103,11 +103,11 @@ For Maxterm, do the opposit by setting the complement to 1.
 
 ### Sum-of-Minterms
 
-Visit [](Lect13_Boolean_Algebra_full.pdf#page=24)
+Visit [PDF](Lect13_Boolean_Algebra_full.pdf#page=24)
 
 ### Product-of-Maxterms
 
-Visit [](Lect13_Boolean_Algebra_full.pdf#page=25)
+Visit [PDF](Lect13_Boolean_Algebra_full.pdf#page=25)
 
 ## Conversion of Standard Forms
 
