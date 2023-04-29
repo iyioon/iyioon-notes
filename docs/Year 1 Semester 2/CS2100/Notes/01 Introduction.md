@@ -22,10 +22,6 @@
 
 ![300](../Attachments/Abstraction.png)
 
-
-
----
-
 ### Abstraction layers
 
 ![c|500](../Attachments/Abstraction%20Layers.png)

@@ -1,10 +1,11 @@
 # Orthogonality 
 
-<span class="right-menu">[MA2001-Chapter5](MA2001-Chapter5.pdf)</span>
+> [!Abstract]- Resources
+> [MA2001-Chapter5](MA2001-Chapter5.pdf)
 
 ## Angle Between Vectors
 
-Visit [](MA2001-Chapter5.pdf#page=6)
+Visit [PDF](MA2001-Chapter5.pdf#page=6)
 
 ## Dot Product and Matrix Multiplication
 
@@ -39,11 +40,11 @@ v_n
 \end{array}\right)=\boldsymbol{u}^{\mathrm{T}} \boldsymbol{v}
 $$
 
-Visit [](MA2001-Chapter5.pdf#page=7)
+Visit [PDF](MA2001-Chapter5.pdf#page=7)
 
 ### Properties
 
-Visit [](MA2001-Chapter5.pdf#page=8)
+Visit [PDF](MA2001-Chapter5.pdf#page=8)
 
 ## Orthogonal and Orthonormal Bases 
 
@@ -61,7 +62,7 @@ If $S$ is orthonormal, then a subset of $S$ is orthonormal.
 If $S$ is orthogonal, then $S \cup\{\mathbf{0}\}$ is also orthogonal. 
 If $S$ is orthonormal, then $0 \notin S$.
 
-Visit [](MA2001-Chapter5.pdf#page=10)
+Visit [PDF](MA2001-Chapter5.pdf#page=10)
 
 
 ### Normalizing
@@ -97,27 +98,27 @@ Identity.
 - $S$ is an orthonormal basis if it is orthonormal.
 
 
-Visit [](MA2001-Chapter5.pdf#page=13)
+Visit [PDF](MA2001-Chapter5.pdf#page=13)
 
 ### Properties 
 
 What are the advantages of orthogonal basis?
 
-Visit [](MA2001-Chapter5.pdf#page=14)
+Visit [PDF](MA2001-Chapter5.pdf#page=14)
 
 ### Finding the coordinate vector using orthogonal set
 
-Visit [](MA2001-Chapter5.pdf#page=15)
+Visit [PDF](MA2001-Chapter5.pdf#page=15)
 
 ## Orthogonality
 
 ### How to check if a vector is orthogonal to a spanning set
 
-Visit [](MA2001-Chapter5.pdf#page=17)
+Visit [PDF](MA2001-Chapter5.pdf#page=17)
 
 ## Projection
 
-Visit [](MA2001-Chapter5.pdf#page=18)
+Visit [PDF](MA2001-Chapter5.pdf#page=18)
 
 Theorem. Let $\left\{\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_k\right\}$ be an orthonormal basis for a vector space $V$. The projection of $\boldsymbol{w}$ onto $V$ is
 
@@ -127,13 +128,13 @@ Theorem. Let $\left\{\boldsymbol{u}_1, \boldsymbol{u}_2, \ldots, \boldsymbol{u}_
 
 $$\left(\frac{\boldsymbol{w} \cdot \boldsymbol{u}_1}{\boldsymbol{u}_1 \cdot \boldsymbol{u}_1}\right) \boldsymbol{u}_1+\left(\frac{\boldsymbol{w} \cdot \boldsymbol{u}_2}{\boldsymbol{u}_2 \cdot \boldsymbol{u}_2}\right) \boldsymbol{u}_2+\cdots+\left(\frac{\boldsymbol{w} \cdot \boldsymbol{u}_k}{\boldsymbol{u}_k \cdot \boldsymbol{u}_k}\right) \boldsymbol{u}_k$$
 
-Visit [](MA2001-Chapter5.pdf#page=20)
+Visit [PDF](MA2001-Chapter5.pdf#page=20)
 
 ## Gram-Schmidt Process
 
 How to find an orthogonal basis for a given vector space? Make sure that the vectors are linearly independent. Otherwise just do the gram-schmidt process and ignore zero vector.
 
-Visit [](MA2001-Chapter5.pdf#page=22)
+Visit [PDF](MA2001-Chapter5.pdf#page=22)
 
 ## Decomposition
 
@@ -153,17 +154,17 @@ Application: Solve linear system $\boldsymbol{A x}=\boldsymbol{b}$.
 ## Best Approximations
 
 Find the orthogonal basis first. Then use it to calculate P.
-Visit [](MA2001-Chapter5.pdf#page=28)
+Visit [PDF](MA2001-Chapter5.pdf#page=28)
 
 ### Finding the shortest distance from a point and a plane
 
-Visit [](MA2001-Chapter5.pdf#page=29)
+Visit [PDF](MA2001-Chapter5.pdf#page=29)
 
 ## Least Squares Solution
 
 Finding the best approximation of Ax = b where b is not in V (column space of A).
-Visit [](MA2001-Chapter5.pdf#page=30)
-[](MA2001-Chapter5.pdf#page=31%7CExample)
+Visit [PDF](MA2001-Chapter5.pdf#page=30)
+[PDF](MA2001-Chapter5.pdf#page=31%7CExample)
 
 Find a least squares solution to $A x=b$ :
 
@@ -176,14 +177,14 @@ Then a solution to $\boldsymbol{A x}=\boldsymbol{p}$ is a least squares solution
 - If $\boldsymbol{A x}=\boldsymbol{b}$ is already consistent, what is the least squares solution?
 	- $\boldsymbol{b}=\boldsymbol{p} \in V$. Solution = Least squares solution.
 
-[](MA2001-Chapter5.pdf#page=33%7CEasier%20method%20Example)
+[Easier method Example](MA2001-Chapter5.pdf#page=33%7CEasier%20method%20Example)
 
 Theorem. (Find the least squares solutions)
 
 - $\boldsymbol{u}$ is a least squares solution to $\boldsymbol{A x}=\boldsymbol{b}$
 $\Leftrightarrow \boldsymbol{u}$ is a solution to $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}=\boldsymbol{A}^{\mathrm{T}} \boldsymbol{b}$.
 
-This can also be used to find the projection. $\boldsymbol{p}=\boldsymbol{A} \boldsymbol{u}$. [](MA2001-Chapter5.pdf#page=37%7CExample)
+This can also be used to find the projection. $\boldsymbol{p}=\boldsymbol{A} \boldsymbol{u}$. [Example](MA2001-Chapter5.pdf#page=37%7CExample)
 
 **In summary:**
 
@@ -195,13 +196,13 @@ $\Leftrightarrow$ columns of $\boldsymbol{A}$ form an orthonormal basis for $\ma
 $\Leftrightarrow$ rows of $\boldsymbol{A}$ form an orthonormal basis for $\mathbb{R}^n$.
 $\Leftrightarrow$ $A^T=A^-1$
 
-Advantages: Visit [](MA2001-Chapter5.pdf#page=38)
+Advantages: Visit [PDF](MA2001-Chapter5.pdf#page=38)
 
-Visit [](MA2001-Chapter5.pdf#page=40)
+Visit [PDF](MA2001-Chapter5.pdf#page=40)
 
 ### Properties
 
-Visit [](MA2001-Chapter5.pdf#page=44) 
+Visit [PDF](MA2001-Chapter5.pdf#page=44) 
 
 More generally, for any $m \times n$ matrix $\boldsymbol{A}$ :
 - $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{I}_n$
@@ -218,15 +219,15 @@ $\circ \quad\left\{\boldsymbol{P} \boldsymbol{u}_1, \ldots, \boldsymbol{P} \bold
 
 ### Properties Transition matrix
 
-Visit [](MA2001-Chapter5.pdf#page=45) 
+Visit [PDF](MA2001-Chapter5.pdf#page=45) 
 
-IMPORTANT EXAMPLES: Visit [](MA2001-Chapter5.pdf#page=46) 
+IMPORTANT EXAMPLES: Visit [PDF](MA2001-Chapter5.pdf#page=46) 
 ## Classification
 
-Visit [](MA2001-Chapter5.pdf#page=48) 
+Visit [PDF](MA2001-Chapter5.pdf#page=48) 
 
 ## Geometric Representation
 
 Visit [](MA2001-Chapter5.pdf#page=49) 
 
-Rotation [](MA2001-Chapter5.pdf#page=51)
+Rotation [PDF](MA2001-Chapter5.pdf#page=51)

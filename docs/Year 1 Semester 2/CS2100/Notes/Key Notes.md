@@ -60,3 +60,17 @@ $$X . Y+X^{\prime} Z+Y . Z=X \cdot Y+X^{\prime} Z$$
 ![minterms](../Attachments/minterms.png)
 
 Don't try out everything. Here B must be 1 for F to be 1. Start there
+
+## Pipelining
+
+Be careful of `beq` instruction eg
+
+```
+slt $t0, $t2, $s0 
+beq $t0, $0, E2
+```
+
+Don't forget that `$t0` is being read, so there is a RAW relationship
+
+For Forwarding see [Lect21_Pipelining2_full](Lect21_Pipelining2_full.pdf#page=25). The Decode stage for or instruction is executed only when the previous instruction's ID stage is finished. So there is a delay here also.
+i

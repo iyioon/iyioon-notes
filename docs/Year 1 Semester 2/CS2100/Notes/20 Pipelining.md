@@ -124,6 +124,8 @@ Achieve reduction from 3 to 1 clock cycle delay. [PDF](Lect21_Pipelining2_full.p
 - However if the register involved in the comparison is produced by preceding instruction, There is a additional delay (stall). [PDF](Lect21_Pipelining2_full.pdf#page=37%7CPDF)
 - The problem is worse with load followed by branch. [PDF](Lect21_Pipelining2_full.pdf#page=38%7CPDF)
 
+> [!warning] Important
+> For branch instruction, when there is a dependency between the previous instruction, there is delay as the data has to be forwarded to the ID stage unlike other instructions.[PDF](Lect21_Pipelining2_full.pdf#page=43%7CPDF).
 ## Branch Prediction
 
 > [PDF](Lect21_Pipelining2_full.pdf#page=39)
@@ -158,8 +160,8 @@ L1: add $s0, $s0, $s3
 
 There are two key things to know here:
 
-- In the $4^{\text{th}}$ row (add), the decode is not after Fetch because the previous instruction Decode cycle has not finished. In other words it can only be executed when the previous instruction is in Execute stage.
-- Note that there are two add instruction. This is because before the branch decision is made in cycle 6 (MEM), the processor continues with the instructions after. Then when the clock cycle reaches 7, it stopes and move on to the L1 instruction which is again, the add instruction.
+- In the $4^{\text{th}}$ row (add), the decode is not after Fetch because the previous instruction Decode cycle has not finished. In other words it can only be executed when the previous instruction is in Execute stage. The same goes for the 3rd row.
+- Note that there are two add instruction. This is because before the branch decision is made in cycle 6 (MEM), the processor continues with the instructions. Then when the clock cycle reaches 7, it stopes and move on to the L1 instruction (because it is actual branch is taken) which is again, the add instruction.
 ## Delayed Branch
 
 > [PDF](Lect21_Pipelining2_full.pdf#page=45)

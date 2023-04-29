@@ -346,7 +346,7 @@ In FA Cache there is only two portions. The tag and the Offset
 
 ## Block Replacement Policy
 
-This only applies to the [Set Associative (SA) Cache](#Set%20Associative%20(SA)%20Cache)and [Fully Associative (FA) Cache](#Fully%20Associative%20(FA)%20Cache) because
+This only applies to the [Set Associative (SA) Cache](#Set%20Associative%20(SA)%20Cache) and [Fully Associative (FA) Cache](#Fully%20Associative%20(FA)%20Cache) because
 
 - Can choose where to place a memory block
 - Potentially replacing another cache block if full
