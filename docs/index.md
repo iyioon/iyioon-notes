@@ -1,10 +1,6 @@
 # Welcome to Archive
 
-This is my digital garden where I archive everything I learn during my time in NUS.
-
-![](https://cdn.dribbble.com/users/1476693/screenshots/7986326/media/0ccb1c2ddad5ef34f7df874a20be74e2.gif)
-
-My computer science journey:
+This is my digital garden where I archive everything I learn during my time in NUS. My computer science journey:
 
 <span class="center-menu">[Year 1 Semester 1](Year%201%20Semester%201/Year%201%20Semester%201.md)<br>[Year 1 Semester 2](Year%201%20Semester%202/Year%201%20Semester%202.md)
 
