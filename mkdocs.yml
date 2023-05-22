@@ -5,7 +5,7 @@ theme:
   logo: fab.png
   favicon: fab.png
   font:
-    text: Roboto
+    text: Tinos
 
   features:
     - navigation.footer
