@@ -71,6 +71,8 @@ plugins:
   - mermaid2
   - awesome-pages
   - callouts
+  - encryptcontent:
+        global_password: 'iyioon'
 
 extra_javascript:
   - javascripts/mathjax.js
