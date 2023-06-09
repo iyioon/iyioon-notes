@@ -71,17 +71,6 @@ plugins:
   - mermaid2
   - awesome-pages
   - callouts
-  - encryptcontent:
-        global_password: 'iyioon'
-        remember_password: True
-        default_expire_delay: 24
-        title_prefix: '[Protected]'
-        summary: 'This content is protected with AES encryption.'
-        placeholder: 'Provide password and press ENTER'
-        decryption_failure_message: 'Invalid password.'
-        encryption_info_message: "Contact your administrator for access to this page."
-        input_class: 'md-search__form md-search__input'
-        button_class: 'md-search__icon'
 
 extra_javascript:
   - javascripts/mathjax.js
