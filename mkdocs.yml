@@ -73,6 +73,15 @@ plugins:
   - callouts
   - encryptcontent:
         global_password: 'iyioon'
+        remember_password: True
+        default_expire_delay: 24
+        title_prefix: '[LOCK]'
+        summary: 'Enter a passwerd to see contents'
+        placeholder: ''
+        decryption_failure_message: 'Login Failed'
+        encryption_info_message: "Access Failed"
+        input_class: 'md-search__form md-search__input'
+        button_class: 'md-search__icon'
 
 extra_javascript:
   - javascripts/mathjax.js
