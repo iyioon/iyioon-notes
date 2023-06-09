@@ -75,11 +75,11 @@ plugins:
         global_password: 'iyioon'
         remember_password: True
         default_expire_delay: 24
-        title_prefix: '[LOCK]'
-        summary: 'Enter a passwerd to see contents'
-        placeholder: ''
-        decryption_failure_message: 'Login Failed'
-        encryption_info_message: "Access Failed"
+        title_prefix: '[Protected]'
+        summary: 'This content is protected with AES encryption.'
+        placeholder: 'Provide password and press ENTER'
+        decryption_failure_message: 'Invalid password.'
+        encryption_info_message: "Contact your administrator for access to this page."
         input_class: 'md-search__form md-search__input'
         button_class: 'md-search__icon'
 
