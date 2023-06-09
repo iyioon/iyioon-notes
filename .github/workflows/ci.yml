@@ -17,5 +17,4 @@ jobs:
       - run: pip install mkdocs-mermaid2-plugin
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-callouts
-      - run: pip install mkdocs-encryptcontent-plugin
       - run: mkdocs gh-deploy --force
