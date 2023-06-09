@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../20%20Pipelining/" rel="prev"/>
+<link href="../Key%20Notes/" rel="next"/>
+<link href="../../../../fab.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.15" name="generator"/>
+<title>Cache - iyioon Archive</title>
+<link href="../../../../assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-purple" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#cache">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="iyioon Archive" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="iyioon Archive">
+<img alt="logo" src="../../../../fab.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            iyioon Archive
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Cache
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="iyioon Archive" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="iyioon Archive">
+<img alt="logo" src="../../../../fab.png"/>
+</a>
+    iyioon Archive
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+        Welcome to Archive
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Year 1 Semester 2
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Year 1 Semester 2
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Year%201%20Semester%202/">
+        Year 1 Semester 2
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          CFG1002
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          CFG1002
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CFG1002/CFG1002/">
+        CFG1002
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CFG1002/Notes/Assessment%20Instructions/">
+        Assessment Instructions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CFG1002/Notes/Descriptions/">
+        Descriptions
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          CS2040S
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          CS2040S
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/CS2040S/">
+        CS2040S Data Structures and Algorithms
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          MyNotes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          MyNotes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/02.Algorithm%20Analysis/">
+        Algorithm Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/03.Searching/">
+        Searching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/05.Sorting/">
+        Sorting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/08.Trees/">
+        Trees
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/12.Heaps/">
+        Heaps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/13.UnionFind/">
+        UnionFind
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/14.Hashing/">
+        Hashing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/17.Graphs/">
+        Graphs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/21.Minimum_Spanning_Tree/">
+        MST
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/MyNotes/22.Dynamic_Programming/">
+        Dynamic Programming
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/Notes/CS2040_14.1%20Analysis%20of%20chaining/">
+        Analysis of chaining
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+          Recitation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Recitation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4_1" id="__nav_2_3_4_1_label" tabindex="0">
+          Rec1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Rec1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/Recitation/Rec1/CS2040_Rec01Solution/">
+        CS2040 Rec01Solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_5">
+<span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5_1" id="__nav_2_3_5_1_label" tabindex="0">
+          Tut1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_5_1">
+<span class="md-nav__icon md-icon"></span>
+          Tut1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/Tutorial/tut1/CS2040S_tut01solution/">
+        CS2040S tut01solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5_2" id="__nav_2_3_5_2_label" tabindex="0">
+          Tut2
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Tut2
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2040S/Tutorial/tut2/CS2040S_tut02solution/">
+        CS2040S tut02solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          CS2100
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+          CS2100
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2100/">
+        CS2100 Computer Organisation
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../01%20Introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02%20Overview%20of%20C%20programming/">
+        Overview of C Programming
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03%20Number%20Systems/">
+        Number Systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../04%20Pointers%20and%20Functions/">
+        Pointers and Functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05%20Arrays%20String%20and%20Structures/">
+        Arrays String and Structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../07-9%20MIPS/">
+        MIPS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10%20ISA/">
+        ISA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11%20Datapath/">
+        The Processor: Datapath
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12%20Control/">
+        Control
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13%20Boolean%20Algebra/">
+        Boolean Algebra
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../14%20Logic%20Circuits/">
+        Logic Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15%20Simplification/">
+        Simplification
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17%20Combinational%20Circuits/">
+        Combinational Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../18%20MSI%20Components/">
+        MSI Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../19%20Sequential%20Logic/">
+        Sequential Logic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../20%20Pipelining/">
+        Pipelining
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Cache
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Cache
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-the-basic-idea">
+    Cache: The Basic Idea
+  </a>
+<nav aria-label="Cache: The Basic Idea" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-locality">
+    Types of Locality
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-location">
+    Cache location
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-access-time">
+    Memory Access Time
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-to-cache-mapping">
+    Memory to Cache Mapping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-mapped-cache">
+    Direct Mapped Cache
+  </a>
+<nav aria-label="Direct Mapped Cache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-structure">
+    Cache Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-data-example">
+    Reading Data Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-cache-misses">
+    Types of Cache Misses
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#writing-data">
+    Writing Data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#write-through-cache">
+    Write - Through Cache
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#write-back-cache">
+    Write - Back Cache
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#handling-cache-misses">
+    Handling Cache Misses
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#block-size-trade-off">
+    Block Size Trade - off
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-associative-sa-cache">
+    Set Associative (SA) Cache
+  </a>
+<nav aria-label="Set Associative (SA) Cache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping">
+    Mapping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+    Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advantage">
+    Advantage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-2">
+    Example 2
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fully-associative-fa-cache">
+    Fully Associative (FA) Cache
+  </a>
+<nav aria-label="Fully Associative (FA) Cache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping_1">
+    Mapping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example_1">
+    Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance">
+    Performance
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#block-replacement-policy">
+    Block Replacement Policy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary_1">
+    Summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exploration-multilevel-cache">
+    Exploration: Multilevel Cache
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Key%20Notes/">
+        Number Systems
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          DTK1234
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+          DTK1234
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../DTK1234/DTK1234/">
+        DTK1234
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../DTK1234/Notes/Intro%20Segment%20-%20Design%20Doing%2C%20not%20Thinking/">
+        Intro Segment - Design Doing, not Thinking
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          GEC1036
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+          GEC1036
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../GEC1036/GEC1036/">
+        GEC1036 Radiation-Scientific Understanding and Public Perception
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          MA2001
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+          MA2001
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/MA2001%20Final%20Note/">
+        MA2001 Final Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/MA2001/">
+        MA2001 Linear Algebra I
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+          HW
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_3">
+<span class="md-nav__icon md-icon"></span>
+          HW
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW1/">
+        HW1 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW2/">
+        HW2 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW3/">
+        HW3 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW4/">
+        HW4 Written
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_4" id="__nav_2_7_4_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_4">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/01%20Linear%20Systems%20%26%20Gaussian%20Elimination/">
+        Linear Systems &amp; Gaussian Elimination
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/02%20Matrices/">
+        Matrices
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/03%20Vector%20Spaces/">
+        Vector Spaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/04%20Orthogonality/">
+        Orthogonality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/05%20Diagonalization/">
+        Diagonalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/06%20Linear%20Transformations/">
+        Linear Transformations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/MA2001%20Midterm%20note/">
+        Chapter 1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-the-basic-idea">
+    Cache: The Basic Idea
+  </a>
+<nav aria-label="Cache: The Basic Idea" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-locality">
+    Types of Locality
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-location">
+    Cache location
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-access-time">
+    Memory Access Time
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-to-cache-mapping">
+    Memory to Cache Mapping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-mapped-cache">
+    Direct Mapped Cache
+  </a>
+<nav aria-label="Direct Mapped Cache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cache-structure">
+    Cache Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-data-example">
+    Reading Data Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-cache-misses">
+    Types of Cache Misses
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#writing-data">
+    Writing Data
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#write-through-cache">
+    Write - Through Cache
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#write-back-cache">
+    Write - Back Cache
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#handling-cache-misses">
+    Handling Cache Misses
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#block-size-trade-off">
+    Block Size Trade - off
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#set-associative-sa-cache">
+    Set Associative (SA) Cache
+  </a>
+<nav aria-label="Set Associative (SA) Cache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping">
+    Mapping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+    Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advantage">
+    Advantage
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-2">
+    Example 2
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fully-associative-fa-cache">
+    Fully Associative (FA) Cache
+  </a>
+<nav aria-label="Fully Associative (FA) Cache" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping_1">
+    Mapping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example_1">
+    Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance">
+    Performance
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#block-replacement-policy">
+    Block Replacement Policy
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary_1">
+    Summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#exploration-multilevel-cache">
+    Exploration: Multilevel Cache
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>Recall that in a computer, the processor access the memory to perform a load or store operation. </p>
+<p><img alt="300" src="../../Attachments/22%20Cache%20Data%20Transfer.png"/></p>
+<p>However, the speed at which these data are travelled are slow. For instance, </p>
+<ul>
+<li>A 1GHz Processor implies that it takes 1ns per clock cycle.</li>
+<li>50ns for DRAM access implies that it takes 50 processor clock cycles per memory access.</li>
+<li>This speed difference is cased by a faster development of the CPU speed compared to the DRAM access speed. See this <a href="../Lect22_Cache1_full.pdf#page=7%7CGraph">Graph</a>. </li>
+</ul>
+<p>Such performance difference is unfavorable. Therefore, we must find faster memory technology ie cache.  </p>
+<p>There are two kinds of memory technology: <strong>DRAM</strong> and <strong>SRAM</strong></p>
+<p><img alt="22 Cache Two types of RAM" src="../../Attachments/22%20Cache%20Two%20types%20of%20RAM.png"/></p>
+<table>
+<thead>
+<tr>
+<th>SRAM</th>
+<th>DRAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6 transistors per memory cell</td>
+<td>1 transistor per memory cell</td>
+</tr>
+<tr>
+<td>Low density</td>
+<td>Hight density</td>
+</tr>
+<tr>
+<td>Fast access latency of 0.5-5ns</td>
+<td>Slow access latency of 50-70ns</td>
+</tr>
+<tr>
+<td>More costly</td>
+<td>Less costly</td>
+</tr>
+<tr>
+<td>Uses flip flops</td>
+<td>Used in main memory</td>
+</tr>
+</tbody>
+</table>
+<p>SRAM is normally used for cache. Besides these memory there are secondary memory such as <a href="../Lect22_Cache1_full.pdf#page=9%7CMagnetic%20Disk">Magnetic Disk</a>. </p>
+<p>In <a href="../Lect22_Cache1_full.pdf#page=10%7Csummary">summary</a>: </p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Capacity</th>
+<th align="center">Latency</th>
+<th align="center">Cost/GB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Register</td>
+<td align="center">100 s Bytes</td>
+<td align="center">20ps</td>
+<td align="center">$$$$</td>
+</tr>
+<tr>
+<td align="center">SRAM</td>
+<td align="center">100sKB</td>
+<td align="center">0.5-5ns</td>
+<td align="center">$$$</td>
+</tr>
+<tr>
+<td align="center">DRAM</td>
+<td align="center">100 s MB</td>
+<td align="center">50-70ns</td>
+<td align="center">$</td>
+</tr>
+<tr>
+<td align="center">Hard Disk</td>
+<td align="center">100sGB</td>
+<td align="center">5-20ms</td>
+<td align="center">Cents</td>
+</tr>
+<tr>
+<td align="center">Ideal</td>
+<td align="center">1GB</td>
+<td align="center">1ns</td>
+<td align="center">Cheap</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cache-the-basic-idea">Cache: The Basic Idea<a class="headerlink" href="#cache-the-basic-idea" title="Permanent link">¶</a></h2>
+<p>Imagine that bookshelf are the memory. You want the read the book, but every time you want to read a another book, you are forced to put back the current book to its bookshelf.</p>
+<p>One solution is to take books that are likely to be needed soon and place them nearby on a desk. This way, you can save time moving back and forth. This is the basic principle of how cache work:</p>
+<ul>
+<li>Keep the frequently and recently used data in <strong>smaller but faster</strong> memory</li>
+<li>Refer to bigger and slower memory only when you cannot find data/instruction in the faster memory</li>
+</ul>
+<p>Why does this work? </p>
+<p><strong>Principle of Locality:</strong> Program accesses only a small portion of the memory address space within a small time interval.</p>
+<h3 id="types-of-locality">Types of Locality<a class="headerlink" href="#types-of-locality" title="Permanent link">¶</a></h3>
+<p><strong>Temporal locality:</strong> If an item is referenced, it will tend to be referenced again soon. E.g., variable in a loop</p>
+<p><strong>Spatial locality:</strong> If an item is referenced, nearby items will tend to be referenced soon. E.g., you access the 1st, 2nd... element in a array.</p>
+<p><a href="../Lect22_Cache1_full.pdf#page=17%7CDiagram">Diagram</a>. Our aim is to capture the working set and keep it in the memory closet to CPU</p>
+<h3 id="cache-location">Cache location<a class="headerlink" href="#cache-location" title="Permanent link">¶</a></h3>
+<p>To improve the access time of the data, <strong>cache</strong> (SRAM) memory is placed in between the processor and the memory (DRAM). </p>
+<p><img alt="500" src="../../Attachments/22%20Cache%20Cache%20Location.png"/></p>
+<h3 id="memory-access-time">Memory Access Time<a class="headerlink" href="#memory-access-time" title="Permanent link">¶</a></h3>
+<p>Cache works by bringing extra "books" that may be needed soon. Hence there is a probability involved. <a href="../Lect22_Cache1_full.pdf#page=19%7CDiagram">Diagram</a>. Lets say the processor tries to access a data. It can either be in the cache (hit) or in the memory (miss).</p>
+<p><strong>Hit</strong>: Data is in cache (e.g., X)</p>
+<ul>
+<li>Hit rate: Fraction of memory accesses that hit</li>
+<li>Hit time: Time to access cache</li>
+</ul>
+<p><strong>Miss</strong>: Data is not in cache (e.g., Y)</p>
+<ul>
+<li>Miss rate <span class="arithmatex">\(=1-\)</span> Hit rate</li>
+<li>Miss penalty: Time to replace cache block + hit time</li>
+</ul>
+<p>Hit time <span class="arithmatex">\(&lt;\)</span> Miss penalty</p>
+<p><font style="color:#3258a8"><span class="arithmatex">\(<span class="arithmatex">\(\text{Average access time} = \text{hit rate} \times\text{hit time}+(1-\text{Hit rate})\times\text{Miss penalty}\)</span>\)</span></font></p>
+<p><strong>Example calculation:</strong> Suppose our on-chip SRAM (cache) has 0.8 ns access time, but the fastest DRAM (main memory) we can get has an access time of <span class="arithmatex">\(10 n s\)</span>. How high a hit rate do we need to sustain an average access time of <span class="arithmatex">\(1 \mathrm{~ns} ?\)</span></p>
+<p>Let <span class="arithmatex">\(h\)</span> be the desired hit rate.
+$$
+\begin{aligned}
+&amp; 1=0.8 h+(1-h) \times(10+0.8) \
+&amp; =0.8 h+10.8-10.8 h \
+&amp; 10 h=9.8 \rightarrow h=0.98
+\end{aligned}
+$$
+Hence we need a hit rate of <span class="arithmatex">\(98 \%\)</span>.</p>
+<h2 id="memory-to-cache-mapping">Memory to Cache Mapping<a class="headerlink" href="#memory-to-cache-mapping" title="Permanent link">¶</a></h2>
+<p>Recall that a word of data is transferred from the memory to the processor. But when we have a cache, we will transfer more than one word of data because we want to bring in more "books" from the "library" to put it on the "desk". This amount of data is called the <strong>cache block/Line</strong></p>
+<ul>
+<li><strong>Cache Block/Line:</strong> Unit of transfer between memory and cache</li>
+<li>Block size is typically one or more word<ul>
+<li>e.g.: 16-byte block <span class="arithmatex">\(\cong 4\)</span>-word block (MIPS)</li>
+<li>32-byte block <span class="arithmatex">\(\cong 8\)</span>-word block </li>
+</ul>
+</li>
+</ul>
+<p><img alt="22 Cache Memory to Cache Mapping" src="../../Attachments/22%20Cache%20Memory%20to%20Cache%20Mapping.png"/></p>
+<p><strong>Block number</strong> is the left 2 bits for the example above.
+<strong>Block offset</strong> is the remaining bits.</p>
+<h2 id="direct-mapped-cache">Direct Mapped Cache<a class="headerlink" href="#direct-mapped-cache" title="Permanent link">¶</a></h2>
+<p>In the previous section, we have divided the memory address into two portions: <strong>Block number</strong> and <strong>offset</strong>. Now lets takes the block number and map them to the cache index. This can be achieved by dividing the block number again into two portions: <strong>tag number</strong> and  <strong>cache index</strong></p>
+<p><img alt="22 Cache Direct mapped cache" src="../../Attachments/22%20Cache%20Direct%20mapped%20cache.png"/></p>
+<p>If number of Cache Blocks = <span class="arithmatex">\(2^M \to\)</span> the last M bits of the block number is the <strong>cache index</strong>. E.g. Cache has <span class="arithmatex">\(2^2=4\)</span> blocks <span class="arithmatex">\(\to\)</span> last 2 bits of the block number is the cache index.</p>
+<p>Multiple memory blocks can map to the same cache block <span class="arithmatex">\(\to\)</span> Same cache index. However, they have unique <strong>tag number:</strong> Tag = Block number / Number of Cache Blocks. (Integer division). This is used to determine where the data in the cache is from. </p>
+<p>In summary the memory address is divided into the following sections.</p>
+<p><img alt="400" src="../../Attachments/22%20Cache%20Directed%20Mapped%20summary.png"/></p>
+<h3 id="cache-structure">Cache Structure<a class="headerlink" href="#cache-structure" title="Permanent link">¶</a></h3>
+<p>In the cache, along with the data block, it also contains the following administrative information (overheads):</p>
+<ul>
+<li><strong>Tag</strong> of the memory block.</li>
+<li><strong>Valid bit</strong> indicating whether the cache line contains valid data.</li>
+</ul>
+<p>When the computers starts, cache is normally filled with random data. Hence it is possible for the tag to coincidently match with the searching tag. This is why valid bit is used to ensure the real data is in the cache.</p>
+<p>With this information, cache hit can be determined with</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(Valid[index] = True) AND (Tag[index] = Tag[memory address])
+</span></code></pre></div>
+<p><strong>For example</strong>: </p>
+<p><img alt="22 Cache Mapping example" src="../../Attachments/22%20Cache%20Mapping%20example.png"/></p>
+<p>With this, lets say we want to determine the cache hit for a particular memory address of the data you are looking for. </p>
+<p><img alt="22 Cache Circuitry" src="../../Attachments/22%20Cache%20Circuitry.png"/></p>
+<ol>
+<li>Use the index to go to the correct row in the cache. E.g. 2</li>
+<li>Determine if the data is in the cache by checking <ol>
+<li>valid.</li>
+<li>Tag in the row is equal to the given Tag.</li>
+</ol>
+</li>
+<li>If it is a hit<ol>
+<li>Use the offset to determine the word you need. E.g the left 2 bits from the offset.</li>
+</ol>
+</li>
+</ol>
+<h3 id="reading-data-example">Reading Data Example<a class="headerlink" href="#reading-data-example" title="Permanent link">¶</a></h3>
+<p>To explore further how the directed mapped cache works, see this <a href="../Lect22_Cache1_full.pdf#page=30%7Cexample"></a>:</p>
+<p>Given a <a href="#Direct%20Mapped%20Cache">Direct Mapped</a> 16KB cache: 16-byte blocks <span class="arithmatex">\(\times\)</span> 1024 cache blocks. Trace the following memory accesses:</p>
+<p><img alt="400" src="../../Attachments/22%20Cache%20Reading%20data.png"/></p>
+<p>Lets begin with the first address.</p>
+<p><img alt="400" src="../../Attachments/22%20Cache.png"/></p>
+<p><strong>Step 1:</strong> Check Cache Block at index 1
+<strong>Step 2:</strong> Data i block 1 is invalid (Cold/Compulsory Miss)</p>
+<p><img alt="600" src="../../Attachments/22%20Cache-1.png"/></p>
+<p><strong>Step 3:</strong> Load 16 bytes from memory; Set Tag and Valid bit</p>
+<p><img alt="600" src="../../Attachments/22%20Cache-2.png"/></p>
+<p><strong>Step 4:</strong> Return Word 1 (byte offset = 4) to Register</p>
+<p>See <a href="../Lect22_Cache1_full.pdf#page=36%7Chere">here</a> for the remaining addresses.</p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h3>
+<p><img alt="22 Cache-3" src="../../Attachments/22%20Cache-3.png"/></p>
+<p>See <a href="../Lect22_Cache1_full.pdf#page=53%7Chere">here</a> for another example.</p>
+<h2 id="types-of-cache-misses">Types of Cache Misses<a class="headerlink" href="#types-of-cache-misses" title="Permanent link">¶</a></h2>
+<p><strong>Compulsory misses</strong></p>
+<ul>
+<li>On the first access to a block; the block must be brought into the cache</li>
+<li>Also called cold start misses or first reference misses</li>
+</ul>
+<p><strong>Conflict misses</strong></p>
+<ul>
+<li>Occur in the case of direct mapped cache or set associative cache, when several blocks are mapped to the same block/set</li>
+<li>Also called collision misses or interference misses</li>
+</ul>
+<p><strong>Capacity misses</strong></p>
+<ul>
+<li>Occur when blocks are discarded from cache as cache cannot contain all blocks needed</li>
+</ul>
+<h2 id="writing-data">Writing Data<a class="headerlink" href="#writing-data" title="Permanent link">¶</a></h2>
+<p>When we want to write data to the memory, we must consider the fact that the data is in both the memory and the cache. In this <a href="../Lect22_Cache1_full.pdf#page=62%7Cexample">example</a> when we write a data to a cache, it does not reflect the data in the memory. Cache and main memory are inconsistent!</p>
+<p><strong>Solution 1:</strong> Write-through cache (easy but slow)</p>
+<ul>
+<li>Write data both to cache and to main memory</li>
+</ul>
+<p><strong>Solution 2:</strong> Write-back cache (more popular)</p>
+<ul>
+<li>Only write to cache</li>
+<li>Write to main memory only when cache block is replaced (evicted) </li>
+</ul>
+<h2 id="write-through-cache">Write - Through Cache<a class="headerlink" href="#write-through-cache" title="Permanent link">¶</a></h2>
+<p><strong>Problem:</strong> Write will operate at the speed of main memory</p>
+<p><img alt="300" src="../../Attachments/22%20Cache-4.png"/></p>
+<p><strong>Solution:</strong> Put a write buffer between cache and main memory</p>
+<ul>
+<li>Processor: writes data to cache + write buffer</li>
+<li>Memory controller: write contents of the buffer to memory</li>
+<li>This allows the processor to continue on, instead of waiting for the write operation on the DRAM completes.</li>
+</ul>
+<h2 id="write-back-cache">Write - Back Cache<a class="headerlink" href="#write-back-cache" title="Permanent link">¶</a></h2>
+<p><strong>Problem:</strong> We need a way to indicated whether the data has been changed in the cache. Otherwise the only option is to write back for every evicted cache blocks which is wasteful. </p>
+<p><strong>Solution:</strong> Add an additional bit (<strong>Dirty bit</strong>) to each cache block. Write operation will change dirty bit to 1. Then, when a cache block is replaced, only write back to memory if dirty bit is 1</p>
+<h2 id="handling-cache-misses">Handling Cache Misses<a class="headerlink" href="#handling-cache-misses" title="Permanent link">¶</a></h2>
+<p>On a <strong>Read Miss</strong></p>
+<ul>
+<li>Data loaded into cache and then load from there to register </li>
+</ul>
+<p><strong>Write Miss</strong> option 1: Write allocate</p>
+<ul>
+<li>Load the complete block into cache</li>
+<li>Change only the required word in cache</li>
+<li>Write to main memory depends on write policy (either write back or write through)</li>
+</ul>
+<p><strong>Write Miss</strong> option 2: Write around</p>
+<ul>
+<li>Do not load the block to cache</li>
+<li>Write directly to main memory only</li>
+</ul>
+<p>In summary: </p>
+<p><img alt="22 Cache-5" src="../../Attachments/22%20Cache-5.png"/></p>
+<p><strong>Reading</strong>: Large and Fast: Exploiting Memory Hierarchy.</p>
+<ul>
+<li>Chapter 7 sections 7.1 – 7.2 (3rd edition)</li>
+<li>Chapter 5 sections 5.1 – 5.2 (4th edition)</li>
+</ul>
+<h2 id="block-size-trade-off">Block Size Trade - off<a class="headerlink" href="#block-size-trade-off" title="Permanent link">¶</a></h2>
+<p>Recall that:</p>
+<div class="arithmatex">\[\text{Average access time} = \text{hit rate} \times\text{hit time}+(1-\text{Hit rate})\times\text{Miss penalty}\]</div>
+<p>Using larger block size has trade offs:</p>
+<ul>
+<li>Takes advantage of spatial locality</li>
+<li>Larger miss penalty: Takes longer time to fill up the block</li>
+<li>If block size is too big relative to cache size <span class="arithmatex">\(\to\)</span> too few cache blocks <span class="arithmatex">\(\to\)</span> miss rate will go up</li>
+</ul>
+<p><img alt="22 Cache-6" src="../../Attachments/22%20Cache-6.png"/></p>
+<p><a href="../Lect23_Cache2_full.pdf#page=5%7CAnother%20diagram">diagram</a></p>
+<h2 id="set-associative-sa-cache">Set Associative (SA) Cache<a class="headerlink" href="#set-associative-sa-cache" title="Permanent link">¶</a></h2>
+<p>SA Cache is a another type of cache used to solve conflict misses. See <a href="#Types%20of%20Cache%20Misses">Types of Cache Misses</a> for recap. </p>
+<p>SA cache can have N-way. N refers to number of blocks in each set. Within the set, a memory block can be placed in any of the N cache blocks in the set. <a href="../Lect23_Cache2_full.pdf#page=8%7CPDF">PDF</a>. For instance a 2-way Set Associative Cache looks as follows:</p>
+<p><img alt="22 Cache-7" src="../../Attachments/22%20Cache-7.png"/></p>
+<p>There is a need to search both blocks to look for the memory block.</p>
+<h3 id="mapping">Mapping<a class="headerlink" href="#mapping" title="Permanent link">¶</a></h3>
+<p>Just like the <a href="#Direct%20Mapped%20Cache">Direct Mapped Cache</a> we have to map the addresses to the cache.</p>
+<p><img alt="500" src="../../Attachments/22%20Cache-8.png"/></p>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h3>
+<p><img alt="500" src="../../Attachments/22%20Cache-9.png"/></p>
+<p><img alt="22 Cache-10" src="../../Attachments/22%20Cache-10.png"/></p>
+<h3 id="advantage">Advantage<a class="headerlink" href="#advantage" title="Permanent link">¶</a></h3>
+<p>Lets compare SA Cache with Direct Mapped Cache to see how it avoids conflict Miss. In the Direct Mapped Cache:</p>
+<p><img alt="500" src="../../Attachments/22%20Cache-11.png"/></p>
+<p>However in the SA Cache:</p>
+<p><img alt="500" src="../../Attachments/22%20Cache-12.png"/></p>
+<p><img alt="400" src="../../Attachments/22%20Cache-13.png"/></p>
+<h3 id="example-2">Example 2<a class="headerlink" href="#example-2" title="Permanent link">¶</a></h3>
+<p>Visit <a href="../Lect23_Cache2_full.pdf#page=17">PDF</a> For detailed example</p>
+<h2 id="fully-associative-fa-cache">Fully Associative (FA) Cache<a class="headerlink" href="#fully-associative-fa-cache" title="Permanent link">¶</a></h2>
+<p>A memory block can be placed in any location in the cache</p>
+<p><strong>Key idea:</strong> Memory block placement is no longer restricted by cache index or cache set index</p>
+<ul>
+<li>Can be placed in any BUT</li>
+<li>Need to search all cache blocks for memory access</li>
+</ul>
+<h3 id="mapping_1">Mapping<a class="headerlink" href="#mapping_1" title="Permanent link">¶</a></h3>
+<p>In FA Cache there is only two portions. The tag and the Offset</p>
+<p><img alt="22 Cache-14" src="../../Attachments/22%20Cache-14.png"/></p>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>4KB cache size and 16-Byte block size</li>
+<li>Compare every tags (256) and valid bits in parallel</li>
+</ul>
+<p><img alt="500" src="../../Attachments/22%20Cache-15.png"/></p>
+<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">¶</a></h3>
+<ol>
+<li>Cold/compulsory miss remains the same irrespective of cache size/associativity.</li>
+<li>For the same cache size, conflict miss goes down with increasing associativity.</li>
+<li>Conflict miss is 0 for FA caches.</li>
+<li>For the same cache size, capacity miss remains the same irrespective of associativity.</li>
+<li>Capacity miss decreases with increasing cache size .</li>
+</ol>
+<h2 id="block-replacement-policy">Block Replacement Policy<a class="headerlink" href="#block-replacement-policy" title="Permanent link">¶</a></h2>
+<p>This only applies to the <a href="#Set%20Associative%20(SA)%20Cache">Set Associative (SA) Cache</a> and <a href="#Fully%20Associative%20(FA)%20Cache">Fully Associative (FA) Cache</a> because</p>
+<ul>
+<li>Can choose where to place a memory block</li>
+<li>Potentially replacing another cache block if full</li>
+<li>Need block replacement policy</li>
+</ul>
+<p><strong>Least Recently Used (LRU)</strong> is one type of block replacement policy </p>
+<ul>
+<li>How: For cache hit, record the cache block that was accessed<ul>
+<li>When replacing a block, choose one which has not been accessed for the longest time</li>
+</ul>
+</li>
+<li>Why: Temporal locality</li>
+</ul>
+<p><strong>Example:</strong> Lets say that the following memory accesses are done: <code>0 4 8 12 4 16 12 0 4</code> in a 4-way SA cache. Figure below shows the <u>data structure</u> (not the cache) to keep track which one is most recently used. By the time <code>0 4 8 12</code> is accessed, we see that in the first line, 12 is the most recently used and 0 is the least recently used.</p>
+<p><img alt="400" src="../../Attachments/22%20Cache-16.png"/></p>
+<p>Then when the next access <code>4</code> is performed, it should move up the data structure shown by the second line. Next when <code>16</code> is accessed, it is a miss, hence the LRU (<code>0</code>) is chosen to evicted illustrated by the 3rd line.</p>
+<p><strong>Draw back for LRU</strong></p>
+<ul>
+<li>Hard to keep track if there are many choices.</li>
+</ul>
+<p><strong>Other replacement policies:</strong></p>
+<ul>
+<li>First in first out (FIFO)</li>
+<li>Random replacement (RR)</li>
+<li>Least frequently used (LFU)</li>
+</ul>
+<p>Visit <a href="../Lect23_Cache2_full.pdf#page=31">PDF</a> for comparison using example.</p>
+<h2 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">¶</a></h2>
+<p>Visit <a href="../Lect23_Cache2_full.pdf#page=35">PDF</a></p>
+<h2 id="exploration-multilevel-cache">Exploration: Multilevel Cache<a class="headerlink" href="#exploration-multilevel-cache" title="Permanent link">¶</a></h2>
+<p>It is possible to separate the cache into</p>
+<ul>
+<li>Data caches</li>
+<li>Instruction cach</li>
+</ul>
+<p>It is also possible to have different level of caches.</p>
+<p>Visit <a href="../Lect23_Cache2_full.pdf#page=38">PDF</a></p>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Pipelining" class="md-footer__link md-footer__link--prev" href="../20%20Pipelining/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Pipelining
+              </div>
+</div>
+</a>
+<a aria-label="Next: Number Systems" class="md-footer__link md-footer__link--next" href="../Key%20Notes/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Number Systems
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.footer", "content.code.copy", "content.code.select", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+<script src="../../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../../../../mathjaxhelper.js"></script>
+<script src="../../../../javascripts/obsidianImage.js"></script>
+</body>
+</html>

@@ -1,0 +1,1119 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../CS2040S/Tutorial/tut2/CS2040S_tut02solution/" rel="prev"/>
+<link href="../Notes/01%20Introduction/" rel="next"/>
+<link href="../../../fab.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.15" name="generator"/>
+<title>CS2100 Computer Organisation - iyioon Archive</title>
+<link href="../../../assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-purple" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#cs2100-computer-organisation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="iyioon Archive" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="iyioon Archive">
+<img alt="logo" src="../../../fab.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            iyioon Archive
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              CS2100 Computer Organisation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="iyioon Archive" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="iyioon Archive">
+<img alt="logo" src="../../../fab.png"/>
+</a>
+    iyioon Archive
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Welcome to Archive
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Year 1 Semester 2
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Year 1 Semester 2
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Year%201%20Semester%202/">
+        Year 1 Semester 2
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          CFG1002
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          CFG1002
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CFG1002/CFG1002/">
+        CFG1002
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CFG1002/Notes/Assessment%20Instructions/">
+        Assessment Instructions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CFG1002/Notes/Descriptions/">
+        Descriptions
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          CS2040S
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          CS2040S
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/CS2040S/">
+        CS2040S Data Structures and Algorithms
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          MyNotes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          MyNotes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/02.Algorithm%20Analysis/">
+        Algorithm Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/03.Searching/">
+        Searching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/05.Sorting/">
+        Sorting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/08.Trees/">
+        Trees
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/12.Heaps/">
+        Heaps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/13.UnionFind/">
+        UnionFind
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/14.Hashing/">
+        Hashing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/17.Graphs/">
+        Graphs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/21.Minimum_Spanning_Tree/">
+        MST
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/MyNotes/22.Dynamic_Programming/">
+        Dynamic Programming
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/Notes/CS2040_14.1%20Analysis%20of%20chaining/">
+        Analysis of chaining
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+          Recitation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Recitation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4_1" id="__nav_2_3_4_1_label" tabindex="0">
+          Rec1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Rec1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/Recitation/Rec1/CS2040_Rec01Solution/">
+        CS2040 Rec01Solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_5">
+<span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5_1" id="__nav_2_3_5_1_label" tabindex="0">
+          Tut1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_5_1">
+<span class="md-nav__icon md-icon"></span>
+          Tut1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/Tutorial/tut1/CS2040S_tut01solution/">
+        CS2040S tut01solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5_2" id="__nav_2_3_5_2_label" tabindex="0">
+          Tut2
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Tut2
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/Tutorial/tut2/CS2040S_tut02solution/">
+        CS2040S tut02solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          CS2100
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+          CS2100
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          CS2100 Computer Organisation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        CS2100 Computer Organisation
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notes">
+    Notes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resources">
+    Resources
+  </a>
+<nav aria-label="Resources" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assessments">
+    Assessments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#books">
+    Books
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#midterm-past-papers">
+    Midterm Past papers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finals">
+    Finals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assigment">
+    Assigment
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/01%20Introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/02%20Overview%20of%20C%20programming/">
+        Overview of C Programming
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/03%20Number%20Systems/">
+        Number Systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/04%20Pointers%20and%20Functions/">
+        Pointers and Functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/05%20Arrays%20String%20and%20Structures/">
+        Arrays String and Structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/07-9%20MIPS/">
+        MIPS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/10%20ISA/">
+        ISA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/11%20Datapath/">
+        The Processor: Datapath
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/12%20Control/">
+        Control
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/13%20Boolean%20Algebra/">
+        Boolean Algebra
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/14%20Logic%20Circuits/">
+        Logic Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/15%20Simplification/">
+        Simplification
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/17%20Combinational%20Circuits/">
+        Combinational Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/18%20MSI%20Components/">
+        MSI Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/19%20Sequential%20Logic/">
+        Sequential Logic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/20%20Pipelining/">
+        Pipelining
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/22%20Cache/">
+        Cache
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Notes/Key%20Notes/">
+        Number Systems
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          DTK1234
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+          DTK1234
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DTK1234/DTK1234/">
+        DTK1234
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DTK1234/Notes/Intro%20Segment%20-%20Design%20Doing%2C%20not%20Thinking/">
+        Intro Segment - Design Doing, not Thinking
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          GEC1036
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+          GEC1036
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../GEC1036/GEC1036/">
+        GEC1036 Radiation-Scientific Understanding and Public Perception
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          MA2001
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+          MA2001
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/MA2001%20Final%20Note/">
+        MA2001 Final Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/MA2001/">
+        MA2001 Linear Algebra I
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+          HW
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_3">
+<span class="md-nav__icon md-icon"></span>
+          HW
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/HW/MA2001_HW1/">
+        HW1 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/HW/MA2001_HW2/">
+        HW2 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/HW/MA2001_HW3/">
+        HW3 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/HW/MA2001_HW4/">
+        HW4 Written
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_4" id="__nav_2_7_4_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_4">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/01%20Linear%20Systems%20%26%20Gaussian%20Elimination/">
+        Linear Systems &amp; Gaussian Elimination
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/02%20Matrices/">
+        Matrices
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/03%20Vector%20Spaces/">
+        Vector Spaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/04%20Orthogonality/">
+        Orthogonality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/05%20Diagonalization/">
+        Diagonalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/06%20Linear%20Transformations/">
+        Linear Transformations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MA2001/Notes/MA2001%20Midterm%20note/">
+        Chapter 1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#notes">
+    Notes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resources">
+    Resources
+  </a>
+<nav aria-label="Resources" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assessments">
+    Assessments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#books">
+    Books
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#midterm-past-papers">
+    Midterm Past papers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finals">
+    Finals
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assigment">
+    Assigment
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="cs2100-computer-organisation">CS2100 Computer Organisation<a class="headerlink" href="#cs2100-computer-organisation" title="Permanent link">¶</a></h1>
+<hr/>
+<div class="admonition info">
+<p class="admonition-title"><a href="https://nusmods.com/modules/CS2100/computer-organisation">NUS MODS</a> <a href="https://www.comp.nus.edu.sg/~cs2100/">Homepage</a> <a href="https://canvas.nus.edu.sg/courses/38530">Canvas</a></p>
+<p>The objective of this module is to familiarize students with the fundamentals of computing devices. Through this module students will understand the basics of data representation, and how the various parts of a computer work, separately and with each other. This allows students to understand the issues in computing devices, and how these issues affect the implementation of solutions. Topics covered include data representation systems, combinational and sequential circuit design techniques, assembly language, processor execution cycles, pipelining, memory hierarchy and input/output systems.</p>
+</div>
+<hr/>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th align="center">Week</th>
+<th>Notes</th>
+<th>Summary</th>
+<th>Tutorial</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td><a href="../Notes/Lect0_Welcome_22s2.pdf">Lect0_Welcome_22s2</a></td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="../Notes/Lect01_Introduction.pdf">Lect01_Introduction</a></td>
+<td><a href="../Notes/01%20Introduction/">01 Introduction</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="../Notes/Lect02_Overview_of_C_Programming-1.pdf">Lect02_Overview_of_C_Programming-1</a><br/><a href="../Notes/Lect02_Overview_of_C_Programming%20-%202.pdf">Lect02_Overview_of_C_Programming - 2</a><br/><a href="../Notes/Lect02_Overview_of_C_Programming%20-%203.pdf">Lect02_Overview_of_C_Programming - 3</a></td>
+<td><a href="../Notes/02%20Overview%20of%20C%20programming/">02 Overview of C programming</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td><a href="../Notes/Lect03_Number_Systems%20-%201.pdf">Lect03_Number_Systems - 1</a><br/><a href="../Notes/Lect03_Number_Systems%20-%202.pdf">Lect03_Number_Systems - 2</a><br/><a href="../Notes/Lect03_Number_Systems%20-%203.pdf">Lect03_Number_Systems - 3</a><br/><a href="../Notes/Lect03_Number_Systems%20-%204.pdf">Lect03_Number_Systems - 4</a></td>
+<td><a href="../Notes/03%20Number%20Systems/">03 Number Systems</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td><a href="../Recitation/Rec1/CS2100_Rec1Extra.pdf">CS2100_Rec1Extra</a><br/><a href="../Recitation/Rec1/CS2100_Recitation%201.pptx">CS2100_Recitation 1</a></td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td><a href="../Notes/Lect4a_Pointers_and_Functions%201.pdf">Lect4a_Pointers_and_Functions 1</a><br/><a href="../Notes/Lect4b_Pointers_and_Functions%202.pdf">Lect4b_Pointers_and_Functions 2</a><br/><a href="../Notes/Lect4c_Pointers_and_Functions%203.pdf">Lect4c_Pointers_and_Functions 3</a><br/><a href="../Notes/Lect4d_Pointers_and_Functions%204.pdf">Lect4d_Pointers_and_Functions 4</a></td>
+<td><a href="../Notes/04%20Pointers%20and%20Functions/">04 Pointers and Functions</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td><a href="../Notes/Lect5a_Arrays_Strings_and_Structures%201.pdf">Lect5a_Arrays_Strings_and_Structures 1</a><br/><a href="../Notes/Lect5b_Arrays_Strings_and_Structures%202.pdf">Lect5b_Arrays_Strings_and_Structures 2</a><br/><a href="../Notes/Lect5c_Arrays_Strings_and_Structures%203.pdf">Lect5c_Arrays_Strings_and_Structures 3</a><br/><a href="../Notes/Lect5d_Arrays_Strings_and_Structures%204.pdf">Lect5d_Arrays_Strings_and_Structures 4</a></td>
+<td><a href="../Notes/05%20Arrays%20String%20and%20Structures/">05 Arrays String and Structures</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td><a href="../Recitation/Rec2/CS2100_Recitation%202.pptx">CS2100_Recitation 2</a></td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td><a href="../Notes/Lect07_MIPS1_full_annotated.pdf">Lect07_MIPS1_full_annotated</a></td>
+<td><a href="../Notes/07-9%20MIPS/">07-9 MIPS</a><br/><a href="../Notes/MIPS_Reference_Data.pdf">MIPS_Reference_Data</a></td>
+<td><a href="../Tutorial/Tut1/CS2100_tut1.pdf">CS2100_tut1</a><br/><a href="../Tutorial/Tut1/CS2100_tut1Ans.pdf">CS2100_tut1Ans</a><br/><a href="../Tutorial/Tut1/CS2100_tut01ans_slides_for_tutors.pdf">CS2100_tut01ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td><a href="../Notes/Lect08_MIPS2_full_annotated.pdf">Lect08_MIPS2_full_annotated</a></td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td><a href="../Notes/Lect09_MIPS3_full.pdf">Lect09_MIPS3_full</a></td>
+<td>-</td>
+<td><a href="../Tutorial/Tut2/CS2100_tut2.pdf">CS2100_tut2</a><br/> <a href="../Tutorial/Tut2/CS2100Tut2Ans-Release.pdf">CS2100Tut2Ans-Release</a><br/> <a href="../Tutorial/Tut2/CS2100_tut02ans_slides_for_tutors.pptx">CS2100_tut02ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td><a href="../Notes/Lect10_ISA_full.pdf">Lect10_ISA_full</a></td>
+<td><a href="../Notes/10%20ISA/">10 ISA</a></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td><a href="../Notes/Lect11_Datapath_full.pdf">Lect11_Datapath_full</a></td>
+<td><a href="../Notes/11%20Datapath/">11 Datapath</a></td>
+<td><a href="../Tutorial/Tut3/CS2100_tut3.pdf">CS2100_tut3</a><br/> <a href="../Tutorial/Tut3/CS2100_tut3Ans.pdf">CS2100_tut3Ans</a><br/> <a href="../Tutorial/Tut3/CS2100_tut03ans_slides_for_tutors.pptx">CS2100_tut03ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td><a href="../Notes/Lect12_Control.pdf">Lect12_Control</a></td>
+<td><a href="../Notes/12%20Control/">12 Control</a></td>
+<td><a href="../Tutorial/Tut4/CS2100_tut4.pdf">CS2100_tut4</a><br/><a href="../Tutorial/Tut4/CS2100_tut4Ans.pdf">CS2100_tut4Ans</a><br/> <a href="../Tutorial/Tut4/CS2100_tut04ans_slides_for_tutors.pptx">CS2100_tut04ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td><a href="../Notes/Lect13_Boolean_Algebra_full.pdf">Lect13_Boolean_Algebra_full</a> <a href="../Notes/Lect14_Logic_Circuits_full.pdf">Lect14_Logic_Circuits_full</a> <a href="../Notes/Lect15_Simplification_full.pdf">Lect15_Simplification_full</a></td>
+<td><a href="../Notes/13%20Boolean%20Algebra/">13 Boolean Algebra</a><br/><a href="../Notes/14%20Logic%20Circuits/">14 Logic Circuits</a><br/><a href="../Notes/15%20Simplification/">15 Simplification</a></td>
+<td><a href="../Tutorial/Tut5/CS2100_tut5.pdf">CS2100_tut5</a><br/><a href="../Tutorial/Tut5/CS2100_tut5Ans.pdf">CS2100_tut5Ans</a> <br/> <a href="../Tutorial/Tut5/CS2100_tut05ans_slides_for_tutors.pptx">CS2100_tut05ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td><a href="../Notes/Lect17_Combinational_Circuits_full.pdf">Lect17_Combinational_Circuits_full</a></td>
+<td><a href="../Notes/17%20Combinational%20Circuits/">17 Combinational Circuits</a></td>
+<td><a href="../Tutorial/Tut6/CS2040S_tut06.pdf">CS2040_tut06</a><br/><a href="../Tutorial/Tut6/CS2100-tut06ans.pdf">CS2100-tut06ans</a><br/> <a href="../Tutorial/Tut6/CS2100_tut06ans_slides_for_tutors.pptx">CS2100_tut06ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td><a href="../Notes/Lect18_MSI_Components_full.pdf">Lect18_MSI_Components_full</a></td>
+<td><a href="../Notes/18%20MSI%20Components/">18 MSI Components</a></td>
+<td><a href="../Tutorial/Tut7/CS2100_tut07qns.pdf">CS2100_tut07qns</a> <br/><a href="../Tutorial/Tut7/CS2100_tut07ans.pdf">CS2100_tut07ans</a> <br/> <a href="../Tutorial/Tut7/CS2100_tut07ans_slides_for_tutors.pptx">CS2100_tut07ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td><a href="../Notes/Lect19_Sequential_Logic_Part-1.pdf">Lect19_Sequential_Logic_Part-1</a><br/><a href="../Notes/Lect19_Sequential_Logic_Part-2.pdf">Lect19_Sequential_Logic_Part-2</a><br/><a href="../Notes/Lect19_Sequential_Logic_Part-3.pdf">Lect19_Sequential_Logic_Part-3</a></td>
+<td><a href="../Notes/19%20Sequential%20Logic/">19 Sequential Logic</a></td>
+<td><a href="../Tutorial/Tut8/CS2100_tut08qns.pdf">CS2100_tut08qns</a> <br/><a href="../Tutorial/Tut8/CS2100_tut08ans.docx">CS2100_tut08ans</a> <br/> <a href="../Tutorial/Tut8/CS2100_tut08ans_slides_for_tutors.pptx">CS2100_tut08ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td><a href="../Notes/Lect20_Pipelining1_full.pdf">Lect20_Pipelining1_full</a><br/><a href="../Notes/Lect21_Pipelining2_full.pdf">Lect21_Pipelining2_full</a></td>
+<td><a href="../Notes/20%20Pipelining/">20 Pipelining</a></td>
+<td><a href="../Tutorial/Tut9/CS2100_tut09qns.pdf">CS2100_tut09qns</a> <br/> <a href="../Tutorial/Tut9/CS2100_tut09ans.docx">CS2100_tut09ans</a> <br/><a href="../Tutorial/Tut9/CS2100_tut09ans_slides_for_tutors.pptx">CS2100_tut09ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td><a href="../Notes/Lect22_Cache1_full.pdf">Lect22_Cache1_full</a><br/><a href="../Notes/Lect23_Cache2_full.pdf">Lect23_Cache2_full</a></td>
+<td><a href="../Notes/22%20Cache/">22 Cache</a></td>
+<td><a href="../Tutorial/Tut10/CS2100_tut10qns.pdf">CS2100_tut10qns</a><br/><a href="../Tutorial/Tut10/CS2100_tut10ans.docx">CS2100_tut10ans</a> <br/><a href="../Tutorial/Tut10/CS2100_tut10ans_slides_for_tutors.pptx">CS2100_tut10ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td>-</td>
+<td>-</td>
+<td><a href="../Tutorial/Tut11/CS2100_tut11qns.pdf">CS2100_tut11qns</a><br/><a href="../Tutorial/Tut11/CS2100_tut11_ans.pdf">CS2100tut11_ans</a><br/><a href="../Tutorial/Tut11/CS2100_tut11ans_slides_for_tutors.pptx">CS2100_tut11ans_slides_for_tutors</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a href="../Notes/Key%20Notes/">Key Notes</a></p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">¶</a></h2>
+<h3 id="assessments">Assessments<a class="headerlink" href="#assessments" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>CA component</th>
+<th align="center">Weightage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lecture quizzes</td>
+<td align="center">5%</td>
+</tr>
+<tr>
+<td>Tutorial attendance</td>
+<td align="center">1%</td>
+</tr>
+<tr>
+<td>2 Assignments</td>
+<td align="center">10%</td>
+</tr>
+<tr>
+<td>Labs</td>
+<td align="center">14%</td>
+</tr>
+<tr>
+<td>Mid-term test *</td>
+<td align="center">20%</td>
+</tr>
+<tr>
+<td>Final exam *</td>
+<td align="center">50%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="books">Books<a class="headerlink" href="#books" title="Permanent link">¶</a></h3>
+<p>Digital Logic Design (DLD) 2nd edition 🔽
+Read Computer Organization and Design (COD), 4th edition 🔽</p>
+<h2 id="midterm-past-papers">Midterm Past papers<a class="headerlink" href="#midterm-past-papers" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Midterm%20Past%20Papers/CS2100_midterm_21s1_qns.pdf">CS2100_midterm_21s1_qns</a></td>
+<td><a href="../Midterm%20Past%20Papers/CS2100_midterm_21s1_ans.pdf">CS2100_midterm_21s1_ans</a></td>
+</tr>
+<tr>
+<td><a href="../Midterm%20Past%20Papers/CS2100_midterm_20s2_qns.pdf">CS2100_midterm_20s2_qns</a></td>
+<td><a href="../Midterm%20Past%20Papers/CS2100_midterm_20s2_ans.pdf">CS2100_midterm_20s2_ans</a></td>
+</tr>
+<tr>
+<td><a href="../Midterm%20Past%20Papers/CS2100_midterm_19s2_qns.pdf">CS2100_midterm_19s2_qns</a></td>
+<td><a href="../Midterm%20Past%20Papers/CS2100_midterm_19s2_answer_sheet.pdf">CS2100_midterm_19s2_answer_sheet</a><br/><a href="../Midterm%20Past%20Papers/CS2100_midterm_19s2_ans.pdf">CS2100_midterm_19s2_ans</a></td>
+</tr>
+<tr>
+<td><a href="../Midterm%20Past%20Papers/CS2100_termtest1_18s2_qns.pdf">CS2100_termtest1_18s2_qns</a></td>
+<td><a href="../Midterm%20Past%20Papers/CS2100_termtest1_18s2_form_ans.pdf">CS2100_termtest1_18s2_form_ans</a></td>
+</tr>
+<tr>
+<td><a href="../Midterm%20Past%20Papers/CS2100_termtest1_17s2_qns.pdf">CS2100_termtest1_17s2_qns</a></td>
+<td><a href="../Midterm%20Past%20Papers/CS2100_termtest1_17s2_form_ans_to_post.pdf">CS2100_termtest1_17s2_form_ans_to_post</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="../Midterm%20Past%20Papers/CS2100_MidTermAns-Release.pdf">CS2100_MidTermAns-Release</a></p>
+<h2 id="finals">Finals<a class="headerlink" href="#finals" title="Permanent link">¶</a></h2>
+<ul>
+<li>AY2021/22 Semester 2: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam21s2_qns.pdf">Question paper</a> | <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam21s2_ans_sheet_blank.pdf">Answer sheets (blank)</a></li>
+<li>AY2021/22 Semester 1: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam21s1_qns.pdf">Question paper</a></li>
+<li>AY2020/21 Semester 2: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam20s2_qns.pdf">Question paper</a></li>
+<li>AY2019/20 Semester 2: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam19s2_qns.pdf">Question paper</a> | <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam19s2_ans_book.pdf">Answer book (blank) |</a> <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam19s2_answers.pdf">Answers</a></li>
+<li>AY2018/19 Semester 2: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam18s2_qns.pdf">Question paper</a> | <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam18s2_ans_book_blank.pdf">Answer book (blank) |</a> <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam18s2_ans_book_answers_post.pdf">Answers</a></li>
+<li>AY2017/18 Semester 2: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam17s2_qns.pdf">Question paper</a> | <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam17s2_ans_book_blank.pdf">Answer Book (blank)</a></li>
+<li>AY2016/17 Semester 2: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam16s2_qns.pdf">Question paper</a> | <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam16s2_ans_book_blank.pdf">Answer Book (blank)</a></li>
+<li>AY2015/16 Semester 1: <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam15s1.pdf">Question paper</a> | <a href="https://www.comp.nus.edu.sg/~cs2100/exam/exam15s1_ans_book_blank.pdf">Answer Book (blank)</a></li>
+</ul>
+<h2 id="assigment">Assigment<a class="headerlink" href="#assigment" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Assignment</th>
+<th>My Ans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Assignment/CS2100Assg1/CS2100_assign1_qns.pdf">CS2100_assign1_qns</a></td>
+<td><a href="../Assignment/assign1_ans.pdf">assign1_ans</a></td>
+</tr>
+<tr>
+<td><a href="../Assignment/CS2100_CS2100Assg2.pdf">CS2100_CS2100Assg2</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: CS2040S tut02solution" class="md-footer__link md-footer__link--prev" href="../../CS2040S/Tutorial/tut2/CS2040S_tut02solution/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                CS2040S tut02solution
+              </div>
+</div>
+</a>
+<a aria-label="Next: Introduction" class="md-footer__link md-footer__link--next" href="../Notes/01%20Introduction/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Introduction
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer", "content.code.copy", "content.code.select", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../../../mathjaxhelper.js"></script>
+<script src="../../../javascripts/obsidianImage.js"></script>
+</body>
+</html>

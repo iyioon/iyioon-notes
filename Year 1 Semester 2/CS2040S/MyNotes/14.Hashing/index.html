@@ -1,0 +1,1405 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../13.UnionFind/" rel="prev"/>
+<link href="../17.Graphs/" rel="next"/>
+<link href="../../../../fab.png" rel="icon"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.15" name="generator"/>
+<title>Hashing - iyioon Archive</title>
+<link href="../../../../assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-purple" data-md-color-primary="white" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#hashing">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="iyioon Archive" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="iyioon Archive">
+<img alt="logo" src="../../../../fab.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            iyioon Archive
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Hashing
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="white" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="iyioon Archive" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="iyioon Archive">
+<img alt="logo" src="../../../../fab.png"/>
+</a>
+    iyioon Archive
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+        Welcome to Archive
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Year 1 Semester 2
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Year 1 Semester 2
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Year%201%20Semester%202/">
+        Year 1 Semester 2
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          CFG1002
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          CFG1002
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CFG1002/CFG1002/">
+        CFG1002
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CFG1002/Notes/Assessment%20Instructions/">
+        Assessment Instructions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CFG1002/Notes/Descriptions/">
+        Descriptions
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          CS2040S
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+          CS2040S
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../CS2040S/">
+        CS2040S Data Structures and Algorithms
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+          MyNotes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_2">
+<span class="md-nav__icon md-icon"></span>
+          MyNotes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../02.Algorithm%20Analysis/">
+        Algorithm Analysis
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../03.Searching/">
+        Searching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../05.Sorting/">
+        Sorting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../08.Trees/">
+        Trees
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12.Heaps/">
+        Heaps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../13.UnionFind/">
+        UnionFind
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Hashing
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Hashing
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-access-tables">
+    Direct Access Tables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-functions">
+    Hash Functions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collisions">
+    Collisions
+  </a>
+<nav aria-label="Collisions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#coping-with-collision">
+    Coping with Collision
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaining">
+    Chaining
+  </a>
+<nav aria-label="Chaining" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations">
+    Operations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analysis-of-chaining">
+    Analysis of chaining
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-hashing">
+    Java hashing
+  </a>
+<nav aria-label="Java hashing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-is-hash-value-calculated-from-the-key">
+    How is hash value calculated from the key?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#designing-hash-functions">
+    Designing Hash Functions
+  </a>
+<nav aria-label="Designing Hash Functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#division-method">
+    Division Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multiplication-method">
+    Multiplication Method
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-resizing">
+    Table Resizing
+  </a>
+<nav aria-label="Table Resizing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#growing-the-table">
+    Growing the table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shrinking-the-table">
+    Shrinking the table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sets">
+    Sets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fingerprint-hash-table">
+    Fingerprint Hash Table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloom-filter">
+    Bloom Filter
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-addressing">
+    Open Addressing
+  </a>
+<nav aria-label="Open Addressing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#searchkey">
+    Search(key)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deletekey">
+    Delete(key)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-functions_1">
+    Hash Functions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linear-probing">
+    Linear Probing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#double-hashing">
+    Double Hashing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance">
+    Performance
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../17.Graphs/">
+        Graphs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../21.Minimum_Spanning_Tree/">
+        MST
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../22.Dynamic_Programming/">
+        Dynamic Programming
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/CS2040_14.1%20Analysis%20of%20chaining/">
+        Analysis of chaining
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+          Recitation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Recitation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_4_1" id="__nav_2_3_4_1_label" tabindex="0">
+          Rec1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_4_1">
+<span class="md-nav__icon md-icon"></span>
+          Rec1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Recitation/Rec1/CS2040_Rec01Solution/">
+        CS2040 Rec01Solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_5">
+<span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5_1" id="__nav_2_3_5_1_label" tabindex="0">
+          Tut1
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_1_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_5_1">
+<span class="md-nav__icon md-icon"></span>
+          Tut1
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorial/tut1/CS2040S_tut01solution/">
+        CS2040S tut01solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3_5_2" id="__nav_2_3_5_2_label" tabindex="0">
+          Tut2
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_5_2_label" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_2_3_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Tut2
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Tutorial/tut2/CS2040S_tut02solution/">
+        CS2040S tut02solution
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          CS2100
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+          CS2100
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/CS2100/">
+        CS2100 Computer Organisation
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/01%20Introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/02%20Overview%20of%20C%20programming/">
+        Overview of C Programming
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/03%20Number%20Systems/">
+        Number Systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/04%20Pointers%20and%20Functions/">
+        Pointers and Functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/05%20Arrays%20String%20and%20Structures/">
+        Arrays String and Structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/07-9%20MIPS/">
+        MIPS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/10%20ISA/">
+        ISA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/11%20Datapath/">
+        The Processor: Datapath
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/12%20Control/">
+        Control
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/13%20Boolean%20Algebra/">
+        Boolean Algebra
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/14%20Logic%20Circuits/">
+        Logic Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/15%20Simplification/">
+        Simplification
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/17%20Combinational%20Circuits/">
+        Combinational Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/18%20MSI%20Components/">
+        MSI Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/19%20Sequential%20Logic/">
+        Sequential Logic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/20%20Pipelining/">
+        Pipelining
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/22%20Cache/">
+        Cache
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../CS2100/Notes/Key%20Notes/">
+        Number Systems
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          DTK1234
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+          DTK1234
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../DTK1234/DTK1234/">
+        DTK1234
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_2">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../DTK1234/Notes/Intro%20Segment%20-%20Design%20Doing%2C%20not%20Thinking/">
+        Intro Segment - Design Doing, not Thinking
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          GEC1036
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+          GEC1036
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../GEC1036/GEC1036/">
+        GEC1036 Radiation-Scientific Understanding and Public Perception
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          MA2001
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+          MA2001
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/MA2001%20Final%20Note/">
+        MA2001 Final Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/MA2001/">
+        MA2001 Linear Algebra I
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+          HW
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_3">
+<span class="md-nav__icon md-icon"></span>
+          HW
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW1/">
+        HW1 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW2/">
+        HW2 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW3/">
+        HW3 Written
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/HW/MA2001_HW4/">
+        HW4 Written
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7_4" id="__nav_2_7_4_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_4">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/01%20Linear%20Systems%20%26%20Gaussian%20Elimination/">
+        Linear Systems &amp; Gaussian Elimination
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/02%20Matrices/">
+        Matrices
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/03%20Vector%20Spaces/">
+        Vector Spaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/04%20Orthogonality/">
+        Orthogonality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/05%20Diagonalization/">
+        Diagonalization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/06%20Linear%20Transformations/">
+        Linear Transformations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MA2001/Notes/MA2001%20Midterm%20note/">
+        Chapter 1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct-access-tables">
+    Direct Access Tables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-functions">
+    Hash Functions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collisions">
+    Collisions
+  </a>
+<nav aria-label="Collisions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#coping-with-collision">
+    Coping with Collision
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaining">
+    Chaining
+  </a>
+<nav aria-label="Chaining" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations">
+    Operations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analysis-of-chaining">
+    Analysis of chaining
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java-hashing">
+    Java hashing
+  </a>
+<nav aria-label="Java hashing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-is-hash-value-calculated-from-the-key">
+    How is hash value calculated from the key?
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#designing-hash-functions">
+    Designing Hash Functions
+  </a>
+<nav aria-label="Designing Hash Functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#division-method">
+    Division Method
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#multiplication-method">
+    Multiplication Method
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-resizing">
+    Table Resizing
+  </a>
+<nav aria-label="Table Resizing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#growing-the-table">
+    Growing the table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#shrinking-the-table">
+    Shrinking the table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sets">
+    Sets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fingerprint-hash-table">
+    Fingerprint Hash Table
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloom-filter">
+    Bloom Filter
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-addressing">
+    Open Addressing
+  </a>
+<nav aria-label="Open Addressing" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#searchkey">
+    Search(key)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deletekey">
+    Delete(key)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-functions_1">
+    Hash Functions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linear-probing">
+    Linear Probing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#double-hashing">
+    Double Hashing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance">
+    Performance
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="hashing">Hashing<a class="headerlink" href="#hashing" title="Permanent link">¶</a></h1>
+<details class="abstract">
+<summary>Resources.</summary>
+<p><a href="https://youtu.be/zN_z7Kwfy_o">Video Part 1</a> <a href="CS2040_14.Hashing1.pdf%5C">PDF</a></p>
+<p><a href="https://youtu.be/j_G_d8oHuq8">Video Part 2</a> <a href="CS2040_15.Hashing2.pdf%5C">PDF</a></p>
+<p><a href="https://youtu.be/qxRIPSXrpb8">Video Part 3</a> <a href="CS2040_16.Hashing3.pdf%5C">PDF</a></p>
+<p><a href="https://www.youtube.com/watch?v=AfIhojjMetk">Video Part 4</a><a href="CS2040_17.Hashing4GraphsIntro.pdf%5C">PDF</a></p>
+</details>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p><strong>Hashing</strong> implements a abstract datatype called a Symbol Table.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">SymbolTable</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="c1">//insert(k,v) into table</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">Value</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w">         </span><span class="c1">//get balue paired with k</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w">          </span><span class="c1">//remove key k (and value)</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">contains</span><span class="p">(</span><span class="n">Key</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w">     </span><span class="c1">// is there a value for k?</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w">                  </span><span class="c1">//number of (k,v) pairs</span>
+</span></code></pre></div>
+<p>These are symbol table used throughout computer science. <a href="CS2040_14.Hashing1.pdf#page=7%7C%E2%9E%9CPDF">PDF</a></p>
+<ul>
+<li>Dictionary</li>
+<li>Phone Book</li>
+<li>Internet DNS</li>
+<li>Java compiler</li>
+</ul>
+<p>Suppose you implement a symbol table with an AVL tree. </p>
+<ul>
+<li>Cost of insertion <span class="arithmatex">\(C_{I}=O(\log n)\)</span> </li>
+<li>Cost of search <span class="arithmatex">\(C_{s}=O(\log n)\)</span></li>
+</ul>
+<p>The objective is to implement a symbol table with a constant cost.</p>
+<ul>
+<li><span class="arithmatex">\(C_{I}=O(1)\)</span> </li>
+<li><span class="arithmatex">\(C_{s}=O(1)\)</span></li>
+</ul>
+<p>However, this means that the sorting cost takes <span class="arithmatex">\(O(n^2)\)</span> unlike an AVL tree that takes <span class="arithmatex">\(O(n\log n)\)</span>.
+Symbol table is not <em>comparison based</em>.</p>
+<h2 id="direct-access-tables">Direct Access Tables<a class="headerlink" href="#direct-access-tables" title="Permanent link">¶</a></h2>
+<p>One of the most obvious method of constructing such data structure is through Direct Access Table.</p>
+<p><strong>Example</strong>: (2, item1), (8, item2), (5, item3)</p>
+<p><img alt="200" src="../../Attachments/14%20Hashing%20Direct%20Access%20Table.png"/></p>
+<p>Assume keys are distinct.</p>
+<p><strong>Problem</strong>:</p>
+<ul>
+<li>Keys are integers</li>
+</ul>
+<p>This cannot be solved by treating everything as a sequence of bits as the size of the array will become too large. For example, to store english words:</p>
+<ul>
+<li>26 letters -&gt; 5 bits/letter</li>
+<li>Longest word = 34 letters</li>
+<li>34 * 5 bits = 170 bits</li>
+<li>Size of the array required to store all english words  = <span class="arithmatex">\(2^{170}\)</span> <span class="arithmatex">\(\approx\)</span> number of atoms in observable universe</li>
+</ul>
+<p>This is why Hash Tables are used.</p>
+<h2 id="hash-functions">Hash Functions<a class="headerlink" href="#hash-functions" title="Permanent link">¶</a></h2>
+<p><strong>Objective</strong>: Given <span class="arithmatex">\(U\)</span> possible keys (eg <span class="arithmatex">\(2^{170}\)</span> ) and <span class="arithmatex">\(n\)</span> number of actual keys, map <span class="arithmatex">\(n\)</span> keys to <span class="arithmatex">\(m \approx n\)</span>buckets.</p>
+<p><img alt="500" src="../../Attachments/14%20Hashing%20Hask%20Function%20mapping.png"/></p>
+<p><strong>Define hash function</strong> <span class="arithmatex">\(\mathrm{h}: \mathrm{U} \rightarrow\{1 . . m\}\)</span></p>
+<ul>
+<li>Store key <span class="arithmatex">\(k\)</span> in bucket <span class="arithmatex">\(\mathrm{h}(k)\)</span></li>
+<li>Time complexity:<ul>
+<li>Time to compute <span class="arithmatex">\(\mathrm{h}\)</span> + Time to access bucket (time to access the location in memory)</li>
+</ul>
+</li>
+<li>Usually: assume hash function has cost 1 to compute.</li>
+</ul>
+<h2 id="collisions">Collisions<a class="headerlink" href="#collisions" title="Permanent link">¶</a></h2>
+<p>We say that two distinct keys <span class="arithmatex">\(k_1\)</span> and <span class="arithmatex">\(k_2\)</span> collide if:
+$$
+\mathrm{h}\left(k_1\right)=\mathrm{h}\left(k_2\right)
+$$</p>
+<blockquote>
+<p>Collision is unavoidable when using a hash function:</p>
+</blockquote>
+<ul>
+<li>The table size is smaller than the universe size</li>
+<li>The pigeonhole principle says:<ul>
+<li>There must exist two keys that map to the same bucket</li>
+<li>Some keys must collide!</li>
+</ul>
+</li>
+</ul>
+<h3 id="coping-with-collision">Coping with Collision<a class="headerlink" href="#coping-with-collision" title="Permanent link">¶</a></h3>
+<p><strong>Idea</strong>: choose a new, better hash functions</p>
+<ul>
+<li>Hard to find.</li>
+<li>Requires re-copying the table.</li>
+<li>Eventually, there will be another collision.</li>
+</ul>
+<p><strong>Idea</strong>: <a href="#Chaining">Chaining</a> </p>
+<ul>
+<li>Put both items in the same bucket!</li>
+</ul>
+<p><strong>Idea</strong>: open addressing</p>
+<ul>
+<li>Find another bucket for the new item.</li>
+</ul>
+<h2 id="chaining">Chaining<a class="headerlink" href="#chaining" title="Permanent link">¶</a></h2>
+<p>Each bucket contains a linked list of items:</p>
+<p><img alt="300" src="../../Attachments/14%20Hashing%20Chaining.png"/></p>
+<p><strong>Total space</strong>: <span class="arithmatex">\(O(m+n)\)</span> where <span class="arithmatex">\(m\)</span> is the number of slots in the hash table and <span class="arithmatex">\(n\)</span> is the number of keys inserted.</p>
+<h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">¶</a></h3>
+<p><strong><code>insert(key,value)</code></strong></p>
+<ul>
+<li>Calculate <code>h(key)</code></li>
+<li>Lookup <code>h(key)</code> and add <code>(key,value)</code> to the linked list.</li>
+<li>worst-case cost: <span class="arithmatex">\(O(1+\operatorname{cost}(\mathrm{h}))\)</span> where <span class="arithmatex">\(\operatorname{cost}(\mathrm{h})\)</span> is the cost of computing the hash function. Note that the element is added to the head of the linked list.</li>
+</ul>
+<p><strong><code>search(key)</code></strong></p>
+<ul>
+<li>Calculate <code>h(key)</code></li>
+<li>Search for <code>(key,value)</code> in the linked list </li>
+<li>Expected search time: <span class="arithmatex">\(O\left( 1+\frac{n}{m} \right)=O(1)\)</span>.  <a href="../../Notes/CS2040_14.1%20Analysis%20of%20chaining/#Expected%20Search%20time|Calculation">Calculation</a></li>
+<li>worst-case cost: <span class="arithmatex">\(O(n+\operatorname{cost}(\mathrm{h}))\)</span>. When all the keys are in the same bucked in the linked list.</li>
+</ul>
+<p><strong><code>Delete(key)</code></strong></p>
+<ol>
+<li>Calculate hash of key.</li>
+<li>Let L be the linked list in the specified bucket.</li>
+<li>Search for item in linked list L.</li>
+<li>Delete item from linked list L.</li>
+<li>Cost = <span class="arithmatex">\(O\left( 1+\frac{n}{m} \right)\)</span></li>
+</ol>
+<h3 id="analysis-of-chaining">Analysis of chaining<a class="headerlink" href="#analysis-of-chaining" title="Permanent link">¶</a></h3>
+<p>Visit <a href="../../Notes/CS2040_14.1%20Analysis%20of%20chaining/">CS2040_14.1 Analysis of chaining</a></p>
+<h2 id="java-hashing">Java hashing<a class="headerlink" href="#java-hashing" title="Permanent link">¶</a></h2>
+<p>How do we implement Hashing in Java? Java provides a interface:</p>
+<p><code>java.util.Map&lt;Key,Value&gt;</code> (Refer to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">java documentation</a>)</p>
+<ul>
+<li>No duplicate keys are allowed</li>
+<li>No mutable keys<ul>
+<li>If you use an object as a key, then you can't modify that object later</li>
+</ul>
+</li>
+</ul>
+<p>Note that <code>Map</code> is a interface. Hence it cannot be instantiated. Instead, <code>HashMap</code> can be used.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ageMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="how-is-hash-value-calculated-from-the-key">How is hash value calculated from the key?<a class="headerlink" href="#how-is-hash-value-calculated-from-the-key" title="Permanent link">¶</a></h3>
+<p>Java Object supports the method <code>int hashCode()</code>. The integer returned by this method is used by Java to calculate the hash value (<code>hash = hashcode % buckets.length</code>). Hence, the subclass must modify the <code>hashCode()</code> method to obey the following rules:</p>
+<ul>
+<li>Always returns the same value, if the object hasn't changed</li>
+<li>If two objects are equal, then they return the same hashCode (Other way around is recommended)</li>
+</ul>
+<p>Overriding the <code>hashCode()</code> method is <em>necessary</em> as default java implementation <code>hashCode</code> returns the memory location of the object, hence every object hashes to a different location.</p>
+<p>Furthermore, you <em>must</em> override <code>.equals</code> to be consistent with hashCode. This is because the <code>get</code> method in HashMap returns the value from the key only if <code>key.equals(k)</code> where k is the object found in the HashMap. Refer to <a href="CS2040_15.Hashing2.pdf#page=89">PDF</a></p>
+<p>Visit <a href="CS2040_15.Hashing2.pdf#page=73">PDF</a> for how Java Library Classes calculates hashCode.</p>
+<h2 id="designing-hash-functions">Designing Hash Functions<a class="headerlink" href="#designing-hash-functions" title="Permanent link">¶</a></h2>
+<p>Goal: find a hash function whose values look random. There are two techniques</p>
+<ul>
+<li>Division Method</li>
+<li>Multiplication Method</li>
+</ul>
+<h3 id="division-method">Division Method<a class="headerlink" href="#division-method" title="Permanent link">¶</a></h3>
+<p>The hash value is calculated by <span class="arithmatex">\(\mathrm{h}(k)=k \bmod m\)</span></p>
+<p>To minimize the collision:</p>
+<ul>
+<li>Choose prime number</li>
+<li>Not too close to a power of 2</li>
+<li>Not too close to a power of 10</li>
+</ul>
+<p><strong>Advantage</strong>: Easy
+<strong>Disadvantage</strong>: Not always the most effective, Division is slow</p>
+<p>Visit <a href="CS2040_15.Hashing2.pdf#page=96">PDF</a> for bad <span class="arithmatex">\(m\)</span> values. </p>
+<p>If all keys and <span class="arithmatex">\(m\)</span> is divisible by <span class="arithmatex">\(d\)</span>, then the value returned by the hash function will always be divisible by <span class="arithmatex">\(d\)</span>. Hence only the slots divisible by <span class="arithmatex">\(d\)</span> will be occupied ie every 1 out of <span class="arithmatex">\(d\)</span> slots will be filled.</p>
+<h3 id="multiplication-method">Multiplication Method<a class="headerlink" href="#multiplication-method" title="Permanent link">¶</a></h3>
+<ul>
+<li>Fix table size: <span class="arithmatex">\(m=2^r\)</span>, for some constant <span class="arithmatex">\(r\)</span>.</li>
+<li>Fix word size: <span class="arithmatex">\(w\)</span>, size of a key in bits.</li>
+<li>Fix (odd) constant A.
+$$
+h(k)=(A k) \bmod 2^w \gg(w-r)
+$$</li>
+</ul>
+<p>Visit <a href="CS2040_15.Hashing2.pdf#page=105">PDF</a> for explanation</p>
+<p><strong>Advantage</strong>: </p>
+<ul>
+<li>Faster than Division method. <ul>
+<li>Multiplication, shifting faster than division</li>
+</ul>
+</li>
+<li>Works reasonably well when A is an odd integer <span class="arithmatex">\(&gt;2^{w-1}\)</span><ul>
+<li>Odd: if it is even, then lose at least one bit's worth</li>
+<li>Big enough: use all the bits in A.</li>
+</ul>
+</li>
+</ul>
+<h2 id="table-resizing">Table Resizing<a class="headerlink" href="#table-resizing" title="Permanent link">¶</a></h2>
+<p><a href="CS2040_16.Hashing3.pdf">CS2040_16.Hashing3</a></p>
+<p>We showed that the expected search time: <span class="arithmatex">\(\mathrm{O}(1+n / m)\)</span> and the optimal size: <span class="arithmatex">\(m=\Theta(n)\)</span></p>
+<ul>
+<li>if <span class="arithmatex">\((\mathrm{m}&lt;2 \mathrm{n})\)</span> : too many collisions.</li>
+<li>if <span class="arithmatex">\((\mathrm{m}&gt;10 \mathrm{n})\)</span> : too much wasted space.</li>
+</ul>
+<p>In general we don't know <span class="arithmatex">\(n\)</span> in advance. Hence we grow and shrink the table as necessary:</p>
+<ol>
+<li>Choose new table size <span class="arithmatex">\(m\)</span></li>
+<li>Choose new hash function <span class="arithmatex">\(h\)</span><ol>
+<li>Hash function depends on table size!</li>
+<li>Remember: <span class="arithmatex">\(h: \mathrm{U} \rightarrow\{1 . . m\}\)</span></li>
+</ol>
+</li>
+<li>For each item in the old hash table<ol>
+<li>Compute new hash function</li>
+<li>Copy item to new bucket</li>
+</ol>
+</li>
+</ol>
+<h3 id="growing-the-table">Growing the table<a class="headerlink" href="#growing-the-table" title="Permanent link">¶</a></h3>
+<ul>
+<li>Let <span class="arithmatex">\(m_1\)</span> be the size of the old hash table.</li>
+<li>Let <span class="arithmatex">\(m_2\)</span> be the size of the new hash table.</li>
+<li>Let <span class="arithmatex">\(n\)</span> be the number of elements in the hash table.</li>
+</ul>
+<p>Then the cost:</p>
+<ul>
+<li>Scanning old hash table: <span class="arithmatex">\(\mathrm{O}\left(m_1\right)\)</span></li>
+<li>Creating new hash table: <span class="arithmatex">\(\mathrm{O}\left(m_2\right)\)</span></li>
+<li>Inserting each element in new hash table: <span class="arithmatex">\(\mathrm{O}(1)\)</span></li>
+<li>Total: <span class="arithmatex">\(\mathrm{O}\left(m_1+m_2+n\right)\)</span></li>
+</ul>
+<p>What is the cost of inserting <span class="arithmatex">\(n\)</span> items by incrementing <span class="arithmatex">\(m\)</span> by 1? <span class="arithmatex">\(O(n^2)\)</span>
+<a href="CS2040_16.Hashing3.pdf#page=25">PDF</a></p>
+<p>This is to large. Hence we double the table size instead given us <span class="arithmatex">\(O(n)\)</span>
+<a href="CS2040_16.Hashing3.pdf#page=27">PDF</a></p>
+<ul>
+<li>Most insertions: <span class="arithmatex">\(\mathrm{O}(1)\)</span></li>
+<li>Some insertions: linear cost (expensive)</li>
+<li>Average cost: <span class="arithmatex">\(\mathrm{O}(1)\)</span></li>
+</ul>
+<p>How about squaring table size. Visit <a href="CS2040_16.Hashing3.pdf#page=30">PDF</a></p>
+<h3 id="shrinking-the-table">Shrinking the table<a class="headerlink" href="#shrinking-the-table" title="Permanent link">¶</a></h3>
+<p>Occurs during deletion of many items. </p>
+<ul>
+<li>If (n == m), then m = 2m.</li>
+<li>
+<p>If (n &lt; m/4), then m = m/2.</p>
+</li>
+<li>
+<p>After every change: the table is half full, half empty.</p>
+</li>
+<li>Every time you double a table of size m, at least m/2 new items were added since last change.</li>
+<li>Every time you shrink a table of size m, at least m/4 items were deleted since last change.</li>
+</ul>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h3>
+<ul>
+<li>When table is full, double the size.</li>
+<li>When table is 3⁄4 empty, half the size.</li>
+<li>Most operations areO(1).</li>
+<li>Some operations costO(n).</li>
+<li>On average, operations costO(1).</li>
+</ul>
+<h2 id="sets">Sets<a class="headerlink" href="#sets" title="Permanent link">¶</a></h2>
+<p>Goal is to store a collection of keys. <a href="CS2040_16.Hashing3.pdf#page=50%7CJava%20Abstract%20Data%20Type">Abstract Data Type</a>. This interface can be implemented with a hash table. <a href="CS2040_16.Hashing3.pdf#page=52%7CExample%7C">Example</a>. </p>
+<p><strong>Disadvantage</strong>: Too much space (buckets)</p>
+<p><strong>Solution</strong>: Use a fingerprint - only store/send <span class="arithmatex">\(m\)</span> bits. <a href="CS2040_16.Hashing3.pdf#page=56%7CExample%7C">Example</a>. </p>
+<h2 id="fingerprint-hash-table">Fingerprint Hash Table<a class="headerlink" href="#fingerprint-hash-table" title="Permanent link">¶</a></h2>
+<p>If there are <a href="#Collisions">Collisions</a>, it may sometimes report true. False Positive.</p>
+<p><strong>Spam example</strong>: it is better to store in the Fingerprint Hash Table:</p>
+<ol>
+<li><mark>The set of good e-mail addresses.</mark></li>
+<li>The set of bad e-mail addresses</li>
+<li>It does not matter.</li>
+</ol>
+<p>It may be better to mistakenly accept a few SPAM e-mails than to accidentally reject an e-mail from my mother!</p>
+<h2 id="bloom-filter">Bloom Filter<a class="headerlink" href="#bloom-filter" title="Permanent link">¶</a></h2>
+<p>Bloom Filter is used to solve the problem above by using two hash functions.</p>
+<p><img alt="400" src="../../Attachments/14%20Hashing%20Bloom%20FIlter.png"/></p>
+<h2 id="open-addressing">Open Addressing<a class="headerlink" href="#open-addressing" title="Permanent link">¶</a></h2>
+<p><strong>On collision</strong> Probe a sequence of buckets until you find an empty one. 
+Unlike chaining, we cannot insert more items if the bucket is already full.</p>
+<p>Example: <a href="CS2040_17.Hashing4GraphsIntro.pdf#page=11%7CLinear%20Probing">Linear Probing</a> - Find the next empty bucket linearly.</p>
+<p>To achieve this, the <strong>hash function</strong> has to be re-defined:</p>
+<div class="arithmatex">\[
+\mathrm{h}(\mathrm{key}, \mathrm{i}): \mathrm{U} \rightarrow\{1 . . \mathrm{m}\}
+\]</div>
+<p>In the case of <a href="CS2040_17.Hashing4GraphsIntro.pdf#page=13%7CLinear%20Probing">Linear Probing</a>:</p>
+<div class="arithmatex">\[
+\mathrm{h}(\mathrm{k}, i)=\mathrm{h}(\mathrm{k}, 1)+(i-1) \bmod m
+\]</div>
+<p>Note that <span class="arithmatex">\((i-1)\operatorname{mod}m\)</span> is used start again from index 0 when <span class="arithmatex">\((i-1)&gt;m\)</span>
+<a href="CS2040_17.Hashing4GraphsIntro.pdf#page=15%7CCode">Code</a></p>
+<h3 id="searchkey">Search(key)<a class="headerlink" href="#searchkey" title="Permanent link">¶</a></h3>
+<p><a href="CS2040_17.Hashing4GraphsIntro.pdf#page=17%7CCode">Code</a></p>
+<h3 id="deletekey">Delete(key)<a class="headerlink" href="#deletekey" title="Permanent link">¶</a></h3>
+<ul>
+<li>Find the key to delete</li>
+<li>Remove it from the table</li>
+<li><mark>Set the bucket to Deleted</mark> (Tombstone value)</li>
+</ul>
+<blockquote>
+<p>Searching literates until it finds a empty bucket. Setting the bucket to null breaks the searching algorithm, hence the bucket is set to deleted.</p>
+</blockquote>
+<h3 id="hash-functions_1">Hash Functions<a class="headerlink" href="#hash-functions_1" title="Permanent link">¶</a></h3>
+<p><strong>Uniform Hashing Assumption:</strong></p>
+<ul>
+<li>Every key is equally likely to be mapped to every <strong>permutation</strong>, independent of every other key.</li>
+</ul>
+<h3 id="linear-probing">Linear Probing<a class="headerlink" href="#linear-probing" title="Permanent link">¶</a></h3>
+<p><strong>Problem</strong>: If there is a cluster, then there is a higher probability that the next <span class="arithmatex">\(h(k)\)</span> will hit the cluster. <a href="CS2040_17.Hashing4GraphsIntro.pdf#page=34%7CPDF">PDF</a>.</p>
+<p><strong>Advantages:</strong> Faster. Easier to access nearby array cells. <a href="CS2040_17.Hashing4GraphsIntro.pdf#page=36%7CPDF">PDF</a>.</p>
+<h3 id="double-hashing">Double Hashing<a class="headerlink" href="#double-hashing" title="Permanent link">¶</a></h3>
+<ul>
+<li>Start with two ordinary hash functions <span class="arithmatex">\(\mathrm{f}(k), \mathrm{g}(k)\)</span>.</li>
+<li>Define new hash functions:<ul>
+<li><span class="arithmatex">\(\mathrm{h}(k, i)=\mathrm{f}(k)+i \cdot \mathrm{g}(k) \bmod m\)</span></li>
+</ul>
+</li>
+</ul>
+<p><a href="CS2040_17.Hashing4GraphsIntro.pdf#page=38%7CProof">Proof</a></p>
+<h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">¶</a></h3>
+<p><strong>Claim</strong>: For <span class="arithmatex">\(n\)</span> items, in a table of size <span class="arithmatex">\(m\)</span>, assuming uniform hashing, the expected cost of an operation is:
+$$
+\frac{1}{1-\alpha}
+$$</p>
+<p><a href="CS2040_17.Hashing4GraphsIntro.pdf#page=45%7CProof">Proof</a></p>
+<p><a href="CS2040_17.Hashing4GraphsIntro.pdf#page=55%7CAdvantages%20&amp;%20Disadvantages">Advantages &amp; Disadvantages</a></p>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: UnionFind" class="md-footer__link md-footer__link--prev" href="../13.UnionFind/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                UnionFind
+              </div>
+</div>
+</a>
+<a aria-label="Next: Graphs" class="md-footer__link md-footer__link--next" href="../17.Graphs/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Graphs
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.footer", "content.code.copy", "content.code.select", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+<script src="../../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="../../../../mathjaxhelper.js"></script>
+<script src="../../../../javascripts/obsidianImage.js"></script>
+</body>
+</html>
